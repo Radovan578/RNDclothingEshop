@@ -1,0 +1,151 @@
+﻿<Window x:Class="RND_clothing_e_shop.Prihlasenie"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Prihlásenie"
+        WindowState="Maximized"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Black">
+
+    <Window.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="55"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="14">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="InputTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="12,8"/>
+            <Setter Property="Background" Value="#FFF2F2F2"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="0,6,0,18"/>
+        </Style>
+
+        <Style x:Key="InputPasswordBoxStyle" TargetType="PasswordBox">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="12,8"/>
+            <Setter Property="Background" Value="#FFF2F2F2"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="0,6,0,18"/>
+        </Style>
+
+        <Style x:Key="FieldLabelStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="0,0,0,2"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <!-- Video -->
+        <MediaElement x:Name="BackgroundVideo"
+                      LoadedBehavior="Manual"
+                      UnloadedBehavior="Stop"
+                      Stretch="UniformToFill"
+                      Volume="0"
+                      IsHitTestVisible="False"
+                      Panel.ZIndex="0"/>
+
+        <!-- Overlay -->
+        <Grid Background="#88000000"
+              Panel.ZIndex="1"/>
+
+        <!-- Back button -->
+        <Button x:Name="BackButton"
+                Content="←"
+                Width="70"
+                Height="70"
+                FontSize="30"
+                FontWeight="Bold"
+                Background="#66000000"
+                Foreground="White"
+                BorderThickness="0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="25"
+                Cursor="Hand"
+                Click="BackButton_Click"
+                Panel.ZIndex="3">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="35">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- Content -->
+        <Viewbox Stretch="Uniform" Panel.ZIndex="2">
+            <Grid Width="1400" Height="800">
+                <Border Width="520"
+                        Padding="35"
+                        Background="#CC1A1A1A"
+                        CornerRadius="22"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+
+                    <StackPanel>
+                        <TextBlock Text="Prihlásenie"
+                                   Foreground="White"
+                                   FontSize="34"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,0,0,28"/>
+
+                        <TextBlock Text="Meno alebo email"
+                                   Style="{StaticResource FieldLabelStyle}"/>
+                        <TextBox x:Name="MenoTextBox"
+                                 Style="{StaticResource InputTextBoxStyle}"/>
+
+                        <TextBlock Text="Heslo"
+                                   Style="{StaticResource FieldLabelStyle}"/>
+                        <PasswordBox x:Name="HesloPasswordBox"
+                                     Style="{StaticResource InputPasswordBoxStyle}"
+                                     Margin="0,6,0,26"/>
+
+                        <Button x:Name="LoginButton"
+                                Content="Prihlásiť sa"
+                                Style="{StaticResource RoundedButtonStyle}"
+                                Background="White"
+                                Foreground="Black"
+                                Margin="0,0,0,14"
+                                Click="LoginButton_Click"/>
+
+                        <Button x:Name="GoToRegisterButton"
+                                Content="Nemáš účet? Registruj sa"
+                                Style="{StaticResource RoundedButtonStyle}"
+                                Background="#FF1F1F1F"
+                                Foreground="White"
+                                BorderBrush="White"
+                                BorderThickness="2"
+                                Click="GoToRegister_Click"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</Window>

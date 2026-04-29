@@ -7,7 +7,39 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="DetailProduktu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="KosikWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Prihlasenie.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Registracia.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ShopPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="DetailProduktu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="KosikWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Prihlasenie.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Registracia.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ShopPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
