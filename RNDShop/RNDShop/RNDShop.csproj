@@ -9,16 +9,54 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\mikina pred.jpeg" />
+    <None Remove="Images\mikina zad.jpeg" />
+    <None Remove="Images\rifle pred.jpeg" />
+    <None Remove="Images\rifle predok.jpeg" />
+    <None Remove="Images\rifle zad.jpeg" />
+    <None Remove="Images\rifle zadok.jpeg" />
+    <None Remove="Images\sweater back.jpeg" />
+    <None Remove="Images\sweater front.jpeg" />
+    <None Remove="Images\tricko zadok.jpeg" />
     <None Remove="Videos\wpf projekt rnd.mp4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Images\" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Videos\wpf projekt rnd.mp4">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\mikina pred.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\mikina zad.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\rifle pred.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\rifle predok.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\rifle zad.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\rifle zadok.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sweater back.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sweater front.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\tricko predok.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\tricko zadok.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
