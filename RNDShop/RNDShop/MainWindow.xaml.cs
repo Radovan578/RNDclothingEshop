@@ -12,7 +12,7 @@ using System.Windows.Shapes;
 namespace RNDShop
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xamlghgh
+    /// Interaction logic for MainWindow.xamlghghhk
     /// </summary>
     public partial class MainWindow : Window
     {
