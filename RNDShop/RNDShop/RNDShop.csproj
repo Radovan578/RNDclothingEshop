@@ -16,20 +16,25 @@
     <None Remove="Images\baggy jeans 6.jpg" />
     <None Remove="Images\baggy jeans 7.jpg" />
     <None Remove="Images\bezove tricko s potlacou predok.jpg" />
+    <None Remove="Images\biele tricko predok.jpg" />
+    <None Remove="Images\biele tricko zadok.jpg" />
     <None Remove="Images\biele triko potlac.jpg" />
     <None Remove="Images\bunda predok.jpg" />
-    <None Remove="Images\cierne street wear tenisky.webp" />
-    <None Remove="Images\cierne topanky elegantne.webp" />
+    <None Remove="Images\cierne street wear tenisky.jpg" />
+    <None Remove="Images\cierne topanky elegantne.jpg" />
     <None Remove="Images\cierne tricko predok.jpg" />
+    <None Remove="Images\cierne tricko s potalcou zadok.jpg" />
     <None Remove="Images\cierne tricko s potlacou 2 predok.jpg" />
     <None Remove="Images\cierne tricko s potlacou predok.jpg" />
+    <None Remove="Images\cierne tricko zadok.jpg" />
+    <None Remove="Images\cierne tricko.jpg" />
     <None Remove="Images\fialova mikina predok.jpg" />
     <None Remove="Images\flared jeans 1.jpg" />
     <None Remove="Images\flared jeans 2.jpg" />
     <None Remove="Images\flared jeans 3.jpg" />
     <None Remove="Images\mikina pred.jpeg" />
     <None Remove="Images\mikina zad.jpeg" />
-    <None Remove="Images\modra mikca 1.webp" />
+    <None Remove="Images\modra mikca 1.jpg" />
     <None Remove="Images\modrozlta mikina potlac.jpg" />
     <None Remove="Images\post malone mikina predok.jpg" />
     <None Remove="Images\rifle pred.jpeg" />
@@ -38,16 +43,18 @@
     <None Remove="Images\rifle zadok.jpeg" />
     <None Remove="Images\ruzova mikina.jpg" />
     <None Remove="Images\ruzove tricko s potalcou predok.jpg" />
-    <None Remove="Images\satka 2.webp" />
-    <None Remove="Images\sede triko 3.webp" />
-    <None Remove="Images\siva mikca 1.webp" />
-    <None Remove="Images\siva mikca 4.webp" />
+    <None Remove="Images\ruzove tricko s potalcou zadok.jpg" />
+    <None Remove="Images\satka 2.jpg" />
+    <None Remove="Images\sede triko 3.jpg" />
+    <None Remove="Images\siva mikca 1.jpg" />
+    <None Remove="Images\siva mikca 4.jpg" />
     <None Remove="Images\siva mikina potlac.jpg" />
-    <None Remove="Images\sive skater tenisky.webp" />
+    <None Remove="Images\sive skater tenisky.jpg" />
     <None Remove="Images\sweater back.jpeg" />
     <None Remove="Images\sweater front.jpeg" />
-    <None Remove="Images\tenisky biele.webp" />
+    <None Remove="Images\tenisky biele.jpg" />
     <None Remove="Images\tenisky.jpg" />
+    <None Remove="Images\tricko predok.jpeg" />
     <None Remove="Images\tricko zadok.jpeg" />
     <None Remove="Videos\wpf projekt rnd.mp4" />
   </ItemGroup>
@@ -71,13 +78,22 @@
     <Content Include="Images\baggy jeans 7.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\biele tricko predok.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\biele tricko zadok.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\biele triko potlac.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\cierne street wear tenisky.webp">
+    <Content Include="Images\cierne street wear tenisky.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\cierne topanky elegantne.webp">
+    <Content Include="Images\cierne topanky elegantne.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\cierne tricko s potalcou zadok.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\cierne tricko s potlacou 2 predok.jpg">
@@ -98,6 +114,12 @@
     <Content Include="Images\cierne tricko predok.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\cierne tricko zadok.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\cierne tricko.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\fialova mikina predok.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -110,55 +132,19 @@
     <Content Include="Images\flared jeans 3.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\modra mikca 1.webp">
+    <Content Include="Images\mikina pred.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\mikina zad.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\modra mikca 1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\modrozlta mikina potlac.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\post malone mikina predok.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\ruzova mikina.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\ruzove tricko s potalcou predok.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\satka 2.webp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\sede triko 3.webp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\siva mikca 1.webp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\siva mikca 4.webp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\siva mikina potlac.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\sive skater tenisky.webp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\tenisky biele.webp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\tenisky.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Videos\wpf projekt rnd.mp4">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Images\mikina pred.jpeg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\mikina zad.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\rifle pred.jpeg">
@@ -173,10 +159,43 @@
     <Content Include="Images\rifle zadok.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\ruzova mikina.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ruzove tricko s potalcou predok.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ruzove tricko s potalcou zadok.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\satka 2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sede triko 3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\siva mikca 1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\siva mikca 4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\siva mikina potlac.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sive skater tenisky.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\sweater back.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\sweater front.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\tenisky biele.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\tenisky.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\tricko predok.jpeg">
@@ -184,6 +203,9 @@
     </Content>
     <Content Include="Images\tricko zadok.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Videos\wpf projekt rnd.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
