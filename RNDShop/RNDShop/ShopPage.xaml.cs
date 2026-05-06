@@ -28,9 +28,12 @@ namespace RND_clothing_e_shop
                 new Produkt { Name = "Biele Tričko", Price = 19.99m, Category = "Tričká", ImagePath = "Images/tricko predok.jpeg" },
                 new Produkt { Name = "Čierna Mikina", Price = 39.99m, Category = "Mikiny", ImagePath = "Images/mikina pred.jpeg"},
                 new Produkt { Name = "Rifle", Price = 49.99m, Category = "Nohavice", ImagePath = "Images/rifle predok.jpeg"},
-                new Produkt { Name = "Bunda", Price = 89.99m, Category = "Bundy", ImagePath = "Images/ sweater front.jpeg"},
-                new Produkt { Name = "Tenisky", Price = 59.99m, Category = "Topánky", ImagePath = ""},
-                new Produkt { Name = "Hodvábna šatka", Price = 12.50m, Category = "Doplnky", ImagePath = ""}
+                new Produkt { Name = "Bunda", Price = 89.99m, Category = "Bundy", ImagePath = "Images/bunda predok.jpg"},
+                new Produkt { Name = "Tenisky", Price = 59.99m, Category = "Topánky", ImagePath = "Images/tenisky.jpg"},
+                new Produkt { Name = "Hodvábna šatka", Price = 12.50m, Category = "Doplnky", ImagePath = "Images/satka 2.webp"},
+                new Produkt { Name = "Béžové tričko s potlačou", Price = 23.99m, Category = "Tričká", ImagePath = "Images/bezove tricko s potlacou predok.jpg"},
+                new Produkt { Name = "Čierne tričko", Price = 19.99m, Category = "Tričká", ImagePath = "Images/cierne tricko predok.jpg"},
+                new Produkt { Name = "Čierne tričko s potlačou", Price = 23.99m, Category = "Tričká", ImagePath = "Images/"}
             };
         }
 
@@ -65,7 +68,7 @@ namespace RND_clothing_e_shop
                 Border imageContainer = new Border
                 {
                     Height = 120,
-                    Background = (Brush)new BrushConverter().ConvertFromString("#FF3A3A3A"),
+                    Background = (Brush)new BrushConverter().ConvertFromString("#FFFFFFFF"),
                     CornerRadius = new CornerRadius(10),
                     Margin = new Thickness(0, 0, 0, 10)
                 };
@@ -168,49 +171,25 @@ namespace RND_clothing_e_shop
         }
 
         // Kategórie
-        private void AllCategory_Click(object sender, RoutedEventArgs e)
-        {
-            ZobrazProdukty("Všetko");
-        }
-        private void TrickaCategory_Click(object sender, RoutedEventArgs e)
-        {
-            ZobrazProdukty("Tričká");
-        }
-        private void MikinyCategory_Click(object sender, RoutedEventArgs e)
-        {
-            ZobrazProdukty("Mikiny");
-        }
-        private void NohaviceCategory_Click(object sender, RoutedEventArgs e)
-        {
-            ZobrazProdukty("Nohavice");
-        }
-        private void BundyCategory_Click(object sender, RoutedEventArgs e)
-        {
-            ZobrazProdukty("Bundy");
-        }
+        private void AllCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Všetko");
+        private void TrickaCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Tričká");
+        private void MikinyCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Mikiny");
+        private void NohaviceCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Nohavice");
+        private void BundyCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Bundy");
         private void TopankyCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Topánky");
         private void DoplnkyCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Doplnky");
 
 
         private void AddWhiteShirt_Click(object sender, RoutedEventArgs e)
-        {
-            AddToCart("Biele Tričko", 19.99m, "");
-        }
+            => AddToCart("Biele Tričko", 19.99m, "C:\\Users\\cipkod25\\source\\repos\\csharp\\obchod eshop\\RND clothing e-shop\\Images\\biele tricko predok.jpg");
 
         private void AddBlackHoodie_Click(object sender, RoutedEventArgs e)
-        {
-            AddToCart("Čierna Mikina", 39.99m, "");
-        }
-            
+            => AddToCart("Čierna Mikina", 39.99m, "C:\\Users\\cipkod25\\source\\repos\\csharp\\obchod eshop\\RND clothing e-shop\\Images\\sweater front.jpg");
+
         private void AddJeans_Click(object sender, RoutedEventArgs e)
-        {
-            AddToCart("Rifle", 49.99m, "");
-        }
-            
+            => AddToCart("Rifle", 49.99m, "C:\\Users\\cipkod25\\source\\repos\\csharp\\obchod eshop\\RND clothing e-shop\\Images\\rifle pred.jpg");
+
         private void AddJacket_Click(object sender, RoutedEventArgs e)
-        {
-            AddToCart("Bunda", 89.99m, "");
-        }
-            
+            => AddToCart("Bunda", 89.99m, "C:\\Users\\cipkod25\\source\\repos\\csharp\\obchod eshop\\RND clothing e-shop\\Images\\bunda predok.jpg");
     }
 }

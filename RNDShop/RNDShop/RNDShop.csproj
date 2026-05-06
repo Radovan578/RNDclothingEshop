@@ -9,19 +9,39 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\bezove tricko s potlacou predok.jpg" />
+    <None Remove="Images\bunda predok.jpg" />
+    <None Remove="Images\cierne tricko predok.jpg" />
     <None Remove="Images\mikina pred.jpeg" />
     <None Remove="Images\mikina zad.jpeg" />
     <None Remove="Images\rifle pred.jpeg" />
     <None Remove="Images\rifle predok.jpeg" />
     <None Remove="Images\rifle zad.jpeg" />
     <None Remove="Images\rifle zadok.jpeg" />
+    <None Remove="Images\satka 2.webp" />
     <None Remove="Images\sweater back.jpeg" />
     <None Remove="Images\sweater front.jpeg" />
+    <None Remove="Images\tenisky.jpg" />
     <None Remove="Images\tricko zadok.jpeg" />
     <None Remove="Videos\wpf projekt rnd.mp4" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Images\bezove tricko s potlacou predok.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\bunda predok.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\cierne tricko predok.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\satka 2.webp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\tenisky.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Videos\wpf projekt rnd.mp4">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
