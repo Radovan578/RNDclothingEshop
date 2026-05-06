@@ -53,6 +53,11 @@
     </Window.Resources>
 
     <Grid>
+        <!-- OBRÁZOK NA POZADÍ -->
+        <Image Source="background 2.png" 
+               Stretch="UniformToFill" 
+               Opacity="0.4"/>
+
         <!-- Sipka spat -->
         <Button x:Name="BackButton"
                 Content="←"
@@ -86,9 +91,9 @@
                 <ColumnDefinition Width="380" />
             </Grid.ColumnDefinitions>
 
-            <!-- Lava cast - produkty -->
+            <!-- Lava cast - produkty (Upravené pozadie na priehľadnejšie) -->
             <Border Grid.Column="0"
-                    Background="#FF1A1A1A"
+                    Background="#CC1A1A1A"
                     CornerRadius="22"
                     Padding="25"
                     Margin="0,0,20,0">
@@ -295,9 +300,9 @@
                 </Grid>
             </Border>
 
-            <!-- Prava cast - sumar -->
+            <!-- Prava cast - sumar (Upravené pozadie na priehľadnejšie) -->
             <Border Grid.Column="1"
-                    Background="#FF1A1A1A"
+                    Background="#CC1A1A1A"
                     CornerRadius="22"
                     Padding="25">
 

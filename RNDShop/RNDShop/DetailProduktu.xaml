@@ -99,7 +99,7 @@
                     Margin="0,0,20,0"
                     Padding="25">
                 <Grid>
-                    <Border Background="#FF2A2A2A"
+                    <Border Background="White"
                             CornerRadius="20"
                             Padding="20">
 

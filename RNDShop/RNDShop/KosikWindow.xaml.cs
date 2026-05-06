@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace RND_clothing_e_shop
 {
@@ -18,53 +20,187 @@ namespace RND_clothing_e_shop
         private void ZobrazKosik()
         {
             KosikItemsPanel.Children.Clear();
+
             decimal celkovaSuma = 0;
 
             foreach (var produkt in ShopPage.KosikList)
             {
                 celkovaSuma += produkt.Price * produkt.Quantity;
 
-                Border polozkaBorder = new Border
+                Border card = new Border
                 {
-                    Background = (Brush)new BrushConverter().ConvertFromString("#FF1A1A1A"),
-                    CornerRadius = new CornerRadius(10),
-                    Margin = new Thickness(0, 0, 0, 10),
-                    Padding = new Thickness(15)
+                    Background = (Brush)new BrushConverter().ConvertFromString("#FF262626"),
+                    CornerRadius = new CornerRadius(18),
+                    Padding = new Thickness(18),
+                    Margin = new Thickness(0, 0, 0, 16)
                 };
 
                 Grid grid = new Grid();
+
+                grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(130) });
                 grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+                grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(170) });
 
-                StackPanel infoPanel = new StackPanel { VerticalAlignment = VerticalAlignment.Center };
-                infoPanel.Children.Add(new TextBlock { Text = produkt.Name, Foreground = Brushes.White, FontSize = 18, FontWeight = FontWeights.Bold });
-                infoPanel.Children.Add(new TextBlock { Text = $"{produkt.Price} € / ks", Foreground = Brushes.Gray, FontSize = 14 });
+                Border imageBorder = new Border
+                {
+                    Width = 110,
+                    Height = 110,
+                    Background = (Brush)new BrushConverter().ConvertFromString("#FF3A3A3A"),
+                    CornerRadius = new CornerRadius(14),
+                    HorizontalAlignment = HorizontalAlignment.Left
+                };
 
-                StackPanel akciePanel = new StackPanel { Orientation = Orientation.Horizontal, VerticalAlignment = VerticalAlignment.Center };
+                TextBlock placeholder = new TextBlock
+                {
+                    Text = "Obrázok",
+                    Foreground = (Brush)new BrushConverter().ConvertFromString("#AAAAAA"),
+                    FontSize = 16,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Center
+                };
 
-                Button btnMinus = new Button { Content = "-", Width = 30, Height = 30, Margin = new Thickness(5), Style = (Style)FindResource("RoundedButtonStyle") };
-                btnMinus.Click += (s, e) => { MinusButton_Click(produkt); };
+                Image img = new Image { Stretch = Stretch.Uniform };
 
-                TextBlock txtPocet = new TextBlock { Text = produkt.Quantity.ToString(), Foreground = Brushes.White, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(10, 0, 10, 0), FontSize = 16 };
+                try
+                {
+                    if (!string.IsNullOrEmpty(produkt.ImagePath))
+                    {
+                        img.Source = new BitmapImage(
+                            new Uri(System.IO.Path.GetFullPath(produkt.ImagePath)));
 
-                Button btnPlus = new Button { Content = "+", Width = 30, Height = 30, Margin = new Thickness(5), Style = (Style)FindResource("RoundedButtonStyle") };
-                btnPlus.Click += (s, e) => { PlusButton_Click(produkt); };
+                        imageBorder.Child = img;
+                    }
+                    else
+                    {
+                        imageBorder.Child = placeholder;
+                    }
+                }
+                catch
+                {
+                    imageBorder.Child = placeholder;
+                }
 
-                Button btnRemove = new Button { Content = "X", Width = 30, Height = 30, Margin = new Thickness(15, 0, 0, 0), Background = Brushes.DarkRed, Foreground = Brushes.White, Style = (Style)FindResource("RoundedButtonStyle") };
-                btnRemove.Click += (s, e) => { RemoveItem_Click(produkt); };
+                StackPanel infoPanel = new StackPanel
+                {
+                    Margin = new Thickness(10, 0, 20, 0),
+                    VerticalAlignment = VerticalAlignment.Center
+                };
 
-                akciePanel.Children.Add(btnMinus);
-                akciePanel.Children.Add(txtPocet);
-                akciePanel.Children.Add(btnPlus);
-                akciePanel.Children.Add(btnRemove);
+                infoPanel.Children.Add(new TextBlock
+                {
+                    Text = produkt.Name,
+                    Foreground = Brushes.White,
+                    FontSize = 22,
+                    FontWeight = FontWeights.SemiBold,
+                    Margin = new Thickness(0, 0, 0, 8)
+                });
 
-                Grid.SetColumn(infoPanel, 0);
-                Grid.SetColumn(akciePanel, 1);
+                infoPanel.Children.Add(new TextBlock
+                {
+                    Text = $"Cena za kus: {produkt.Price:N2} €",
+                    Foreground = (Brush)new BrushConverter().ConvertFromString("#DDDDDD"),
+                    FontSize = 16,
+                    Margin = new Thickness(0, 0, 0, 6)
+                });
+
+                infoPanel.Children.Add(new TextBlock
+                {
+                    Text = "Veľkosť: M",
+                    Foreground = (Brush)new BrushConverter().ConvertFromString("#BBBBBB"),
+                    FontSize = 15
+                });
+
+                StackPanel actionPanel = new StackPanel
+                {
+                    VerticalAlignment = VerticalAlignment.Center,
+                    HorizontalAlignment = HorizontalAlignment.Right
+                };
+
+                TextBlock qtyTitle = new TextBlock
+                {
+                    Text = "Množstvo",
+                    Foreground = Brushes.White,
+                    FontSize = 16,
+                    FontWeight = FontWeights.SemiBold,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    Margin = new Thickness(0, 0, 0, 8)
+                };
+
+                StackPanel qtyRow = new StackPanel
+                {
+                    Orientation = Orientation.Horizontal,
+                    HorizontalAlignment = HorizontalAlignment.Center
+                };
+
+                Button minus = new Button
+                {
+                    Content = "-",
+                    Style = (Style)FindResource("SmallButtonStyle")
+                };
+
+                TextBlock qtyText = new TextBlock
+                {
+                    Text = produkt.Quantity.ToString(),
+                    Foreground = Brushes.White,
+                    FontSize = 20,
+                    Width = 40,
+                    TextAlignment = TextAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Center
+                };
+
+                Button plus = new Button
+                {
+                    Content = "+",
+                    Style = (Style)FindResource("SmallButtonStyle")
+                };
+
+                minus.Click += (s, e) =>
+                {
+                    MinusButton_Click(produkt);
+                    ZobrazKosik();
+                };
+
+                plus.Click += (s, e) =>
+                {
+                    PlusButton_Click(produkt);
+                    ZobrazKosik();
+                };
+
+                qtyRow.Children.Add(minus);
+                qtyRow.Children.Add(qtyText);
+                qtyRow.Children.Add(plus);
+
+                Button remove = new Button
+                {
+                    Content = "Odstrániť",
+                    Height = 42,
+                    Margin = new Thickness(0, 14, 0, 0),
+                    Background = (Brush)new BrushConverter().ConvertFromString("#FFB71C1C"),
+                    Foreground = Brushes.White,
+                    Cursor = Cursors.Hand,
+                    Style = (Style)FindResource("RoundedButtonStyle")
+                };
+
+                remove.Click += (s, e) =>
+                {
+                    RemoveItem_Click(produkt);
+                    ZobrazKosik();
+                };
+
+                actionPanel.Children.Add(qtyTitle);
+                actionPanel.Children.Add(qtyRow);
+                actionPanel.Children.Add(remove);
+
+                Grid.SetColumn(imageBorder, 0);
+                Grid.SetColumn(infoPanel, 1);
+                Grid.SetColumn(actionPanel, 2);
+
+                grid.Children.Add(imageBorder);
                 grid.Children.Add(infoPanel);
-                grid.Children.Add(akciePanel);
+                grid.Children.Add(actionPanel);
 
-                polozkaBorder.Child = grid;
-                KosikItemsPanel.Children.Add(polozkaBorder);
+                card.Child = grid;
+                KosikItemsPanel.Children.Add(card);
             }
 
             TotalPriceTxt.Text = $"{celkovaSuma:F2} €";
@@ -123,12 +259,9 @@ namespace RND_clothing_e_shop
             this.Close();
         }
 
-        // 1. Zníženie množstva
         private void MinusButton_Click(object sender, RoutedEventArgs e)
         {
-            // Zistíme, na ktoré tlačidlo sa kliklo
             var tlacidlo = sender as Button;
-            // Získame dáta produktu priradeného k tomuto riadku
             var polozka = tlacidlo?.DataContext as dynamic;
 
             if (polozka != null)
@@ -136,18 +269,14 @@ namespace RND_clothing_e_shop
                 if (polozka.Quantity > 1)
                 {
                     polozka.Quantity--;
-                    // Ak máš metódu na prepočet celkovej ceny, zavolaj ju tu:
-                    // PrepocitajCelkovuCenu();
                 }
                 else
                 {
-                    // Ak je množstvo 1 a klikneš na mínus, položku odstránime
                     RemoveItem_Click(sender, e);
                 }
             }
         }
 
-        // 2. Zvýšenie množstva
         private void PlusButton_Click(object sender, RoutedEventArgs e)
         {
             var tlacidlo = sender as Button;
@@ -156,11 +285,9 @@ namespace RND_clothing_e_shop
             if (polozka != null)
             {
                 polozka.Quantity++;
-                // PrepocitajCelkovuCenu();
             }
         }
 
-        // 3. Odstránenie položky
         private void RemoveItem_Click(object sender, RoutedEventArgs e)
         {
             var tlacidlo = sender as Button;
