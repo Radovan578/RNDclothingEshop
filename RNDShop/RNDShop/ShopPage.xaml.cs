@@ -331,7 +331,6 @@ namespace RND_clothing_e_shop
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
-            JsonServis.DeleteUsers();
             JsonServis.DeleteKosik();
 
             new MainWindow().Show();
