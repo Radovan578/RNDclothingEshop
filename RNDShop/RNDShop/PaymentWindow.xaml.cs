@@ -13,14 +13,14 @@ namespace RND_clothing_e_shop
 
         private void PayButton_Click(object sender, RoutedEventArgs e)
         {
-            //KONTROLA UDAJOV
+            //kontrola udajov
             if (CardNumberBox.Text.Length < 12 || ExpiryBox.Text.Length < 4 || CVVBox.Password.Length < 3)
             {
                 MessageBox.Show("Prosím, zadajte platné údaje o karte.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            //SIMULACIA PLATBY
+            //simulacia platby
             MessageBox.Show("Platba prebehla úspešne!", "Hotovo", MessageBoxButton.OK, MessageBoxImage.Information);
             PlatbaUspesna = true;
             this.DialogResult = true;

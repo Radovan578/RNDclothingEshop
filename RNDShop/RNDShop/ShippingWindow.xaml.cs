@@ -98,12 +98,12 @@ namespace RND_clothing_e_shop
             return false;
         }
 
-        // --- TU JE OPRAVENÁ LOGIKA PORADIA ---
+        
         private void ConfirmOrderButton_Click(object sender, RoutedEventArgs e)
         {
             if (!SkontrolujUdaje()) return;
 
-            // Ak je zvolená karta, otvoríme okno. Ak užívateľ kartu zruší, nepokračujeme.
+            // pokial je zvolena moznost platobna karta otvori sa okno, pokial nie uzivatel nepokracuje
             if (CardPaymentOption.IsChecked == true)
             {
                 PaymentWindow platobneOkno = new PaymentWindow();
@@ -113,7 +113,7 @@ namespace RND_clothing_e_shop
                 if (vysledok != true) return;
             }
 
-            // Až teraz po úspešnej platbe (alebo dobierke) napíšeme správu
+            // po uspesnej platbe sa uzivatelovi zobrazi sprava
             MessageBox.Show("Objednávka bola úspešne prijatá a je na ceste k vám!", "Úspech", MessageBoxButton.OK, MessageBoxImage.Information);
 
             if (ShopPage.KosikList != null) ShopPage.KosikList.Clear();

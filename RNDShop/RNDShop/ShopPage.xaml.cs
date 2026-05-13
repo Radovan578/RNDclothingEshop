@@ -338,7 +338,7 @@ namespace RND_clothing_e_shop
             this.Close();
         }
 
-        // Kategórie
+        // kategorie
         private void AllCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Všetko");
         private void TrickaCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Tričká");
         private void MikinyCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Mikiny");
