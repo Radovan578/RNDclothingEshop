@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
 namespace RND_clothing_e_shop
@@ -16,6 +17,7 @@ namespace RND_clothing_e_shop
             this.produkt = produkt;
 
             LoadProdukt();
+
         }
 
         private void LoadProdukt()
@@ -47,6 +49,14 @@ namespace RND_clothing_e_shop
         }
         private void AddToCart()
         {
+            string size = ((ComboBoxItem)SizeComboBox.SelectedItem).Content.ToString();
+
+            if (SizeComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Vyber veľkosť.");
+                return;
+            }
+
             var exist = ShopPage.KosikList
                 .FirstOrDefault(p => p.Name == produkt.Name);
 
@@ -58,7 +68,8 @@ namespace RND_clothing_e_shop
                     Name = produkt.Name,
                     Price = produkt.Price,
                     ImagePath = produkt.ImagePath,
-                    Quantity = quantity
+                    Quantity = quantity,
+                    Size = size
                 });
         }
 
@@ -116,5 +127,7 @@ namespace RND_clothing_e_shop
         {
 
         }
+
+        
     }
 }

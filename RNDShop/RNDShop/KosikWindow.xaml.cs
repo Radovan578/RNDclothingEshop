@@ -105,7 +105,7 @@ namespace RND_clothing_e_shop
 
                 infoPanel.Children.Add(new TextBlock
                 {
-                    Text = "Veľkosť: M",
+                    Text = $"Veľkosť: {produkt.Size}",
                     Foreground = (Brush)new BrushConverter().ConvertFromString("#BBBBBB"),
                     FontSize = 15
                 });

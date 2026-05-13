@@ -195,7 +195,8 @@
                                    Margin="0,0,0,8"/>
 
                         <ComboBox x:Name="SizeComboBox"
-                                  Style="{StaticResource ComboBoxStyleModern}">
+                                  Style="{StaticResource ComboBoxStyleModern}" 
+                                  SelectedIndex="0">
                             <ComboBoxItem Content="S"/>
                             <ComboBoxItem Content="M"/>
                             <ComboBoxItem Content="L"/>

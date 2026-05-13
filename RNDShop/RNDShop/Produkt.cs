@@ -13,6 +13,7 @@ namespace RND_clothing_e_shop
         public decimal Price { get; set; }
         public int Quantity { get; set; }
         public string ImagePath { get; set; }
+        public string Size { get; set; }
 
     }
 }

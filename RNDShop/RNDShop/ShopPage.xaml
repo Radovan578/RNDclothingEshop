@@ -8,6 +8,7 @@
         Background="#FF111111">
 
     <Window.Resources>
+
         <!-- Buttons Style -->
         <Style x:Key="RoundedButtonStyle" TargetType="Button">
             <Setter Property="Height" Value="55"/>
@@ -33,7 +34,6 @@
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Background" Value="#CC1F1F1F"/>
-            <!-- Jemne priehľadné pozadie tlačidiel -->
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Margin" Value="0,0,0,10"/>
             <Setter Property="Cursor" Value="Hand"/>
@@ -47,22 +47,34 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
     </Window.Resources>
 
     <Grid>
-        <!-- FOTKA NA POZADÍ (Pridané sem, aby bola úplne naspodu) --> 
-        <!-- Uisti sa, že máš obrázok v priečinku Images a Build Action nastavený na Resource -->
-        <Image Source="Images/background.png" 
-               Stretch="UniformToFill" 
-               Opacity="2.0" 
-               HorizontalAlignment="Center" 
+
+        <!-- Background -->
+        <Image Source="Images/background.png"
+               Stretch="UniformToFill"
+               Opacity="2.0"
+               HorizontalAlignment="Center"
                VerticalAlignment="Center"/>
 
-        <!-- Back arrow -->
-        <Button Content="←" Width="70" Height="70" FontSize="30" FontWeight="Bold"
-                Background="#66000000" Foreground="White" BorderThickness="0"
-                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25"
-                Cursor="Hand" Click="BackButton_Click" Panel.ZIndex="3">
+        <!-- Back Button -->
+        <Button Content="←"
+                Width="70"
+                Height="70"
+                FontSize="30"
+                FontWeight="Bold"
+                Background="#66000000"
+                Foreground="White"
+                BorderThickness="0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="25"
+                Cursor="Hand"
+                Click="BackButton_Click"
+                Panel.ZIndex="3">
+
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" CornerRadius="35">
@@ -72,11 +84,22 @@
             </Button.Template>
         </Button>
 
-        <!-- Logout button -->
-        <Button Content="Odhlásiť sa" Width="150" Height="55" FontSize="18" FontWeight="Bold"
-                Background="#66000000" Foreground="White" BorderThickness="0"
-                HorizontalAlignment="Right" VerticalAlignment="Top" Margin="25"
-                Cursor="Hand" Click="LogoutButton_Click" Panel.ZIndex="3">
+        <!-- Logout -->
+        <Button Content="Odhlásiť sa"
+                Width="150"
+                Height="55"
+                FontSize="18"
+                FontWeight="Bold"
+                Background="#66000000"
+                Foreground="White"
+                BorderThickness="0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Margin="25"
+                Cursor="Hand"
+                Click="LogoutButton_Click"
+                Panel.ZIndex="3">
+
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" CornerRadius="14">
@@ -86,63 +109,143 @@
             </Button.Template>
         </Button>
 
-        <!-- Layout -->
+        <!-- Main Layout -->
         <Grid Margin="40">
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="280"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <!-- LEFT PANEL -->
-            <Border Grid.Column="0" Background="#CC1A1A1A" CornerRadius="20" Padding="20" Margin="0,0,20,0">
+            <Border Grid.Column="0"
+                    Background="#CC1A1A1A"
+                    CornerRadius="20"
+                    Padding="20"
+                    Margin="0,0,20,0">
+
                 <StackPanel>
-                    <TextBlock Text="Kategórie" Foreground="White" FontSize="26" FontWeight="Bold" Margin="0,0,0,20"/>
-                    <Button Content="Všetko" Style="{StaticResource CategoryButtonStyle}" Click="AllCategory_Click"/>
-                    <Button Content="Tričká" Style="{StaticResource CategoryButtonStyle}" Click="TrickaCategory_Click"/>
-                    <Button Content="Mikiny" Style="{StaticResource CategoryButtonStyle}" Click="MikinyCategory_Click"/>
-                    <Button Content="Nohavice" Style="{StaticResource CategoryButtonStyle}" Click="NohaviceCategory_Click"/>
-                    <Button Content="Bundy" Style="{StaticResource CategoryButtonStyle}" Click="BundyCategory_Click"/>
+
+                    <TextBlock Text="Kategórie"
+                               Foreground="White"
+                               FontSize="26"
+                               FontWeight="Bold"
+                               Margin="0,0,0,20"/>
+
+                    <Button Content="Všetko"
+                            Style="{StaticResource CategoryButtonStyle}"
+                            Click="AllCategory_Click"/>
+
+                    <Button Content="Tričká"
+                            Style="{StaticResource CategoryButtonStyle}"
+                            Click="TrickaCategory_Click"/>
+
+                    <Button Content="Mikiny"
+                            Style="{StaticResource CategoryButtonStyle}"
+                            Click="MikinyCategory_Click"/>
+
+                    <Button Content="Nohavice"
+                            Style="{StaticResource CategoryButtonStyle}"
+                            Click="NohaviceCategory_Click"/>
+
+                    <Button Content="Bundy"
+                            Style="{StaticResource CategoryButtonStyle}"
+                            Click="BundyCategory_Click"/>
+
+                    <Button Content="Topánky"
+                            Style="{StaticResource CategoryButtonStyle}"
+                            Click="TopankyCategory_Click"/>
+
+                    <Button Content="Doplnky"
+                            Style="{StaticResource CategoryButtonStyle}"
+                            Click="DoplnkyCategory_Click"/>
+
                     <Border Height="30"/>
-                    <Button Content="Prejsť do košíka" Style="{StaticResource RoundedButtonStyle}" 
-                            Background="White" Foreground="Black" Click="CartButton_Click"/>
+
+                    <Button Content="Prejsť do košíka"
+                            Style="{StaticResource RoundedButtonStyle}"
+                            Background="White"
+                            Foreground="Black"
+                            Click="CartButton_Click"/>
+
                 </StackPanel>
             </Border>
 
             <!-- RIGHT PANEL -->
-            <Border Grid.Column="1" Background="#CC1A1A1A" CornerRadius="20" Padding="20">
+            <Border Grid.Column="1"
+                    Background="#CC1A1A1A"
+                    CornerRadius="20"
+                    Padding="20">
+
                 <Grid>
+
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Text="Obchod" Foreground="White" FontSize="34" FontWeight="Bold" Margin="0,0,0,20"/>
-                    <ScrollViewer Grid.Row="1">
-                        <WrapPanel x:Name="ProductsPanel" Margin="20">
-                            <!-- PRODUCT -->
-                            <Border Width="220" Height="280" Background="#FF2A2A2A" CornerRadius="15" Margin="10" Padding="10">
-                                <StackPanel>
-                                    <Border Height="120" Background="White" CornerRadius="10" Margin="0,0,0,10" ClipToBounds="True">
-                                        <Image Source="C:\Users\cipkod25\source\repos\csharp\obchod eshop\RND clothing e-shop\Images\biele tricko predok.jpg"
-                                               Stretch="UniformToFill" VerticalAlignment="Top" Margin="0,-72,0,0"/>
-                                    </Border>
-                                    <TextBlock Text="Tričko" Foreground="White" FontSize="18" FontWeight="SemiBold"/>
-                                    <TextBlock Text="19,99 €" Foreground="#CCCCCC" Margin="0,5,0,10"/>
-                                    <Button Content="Pridať" Style="{StaticResource RoundedButtonStyle}" Height="40" FontSize="14" Background="White" Foreground="Black"/>
-                                </StackPanel>
-                            </Border>
-                            <!-- Ďalší produkt -->
-                            <Border Width="220" Height="280" Background="#FF2A2A2A" CornerRadius="15" Margin="10" Padding="10">
-                                <StackPanel>
-                                    <Border Height="120" Background="White" CornerRadius="10" Margin="0,0,0,10"/>
-                                    <TextBlock Text="Mikina" Foreground="White" FontSize="18" FontWeight="SemiBold"/>
-                                    <TextBlock Text="39,99 €" Foreground="#CCCCCC" Margin="0,5,0,10"/>
-                                    <Button Content="Pridať" Style="{StaticResource RoundedButtonStyle}" Height="40" FontSize="14" Background="White" Foreground="Black"/>
-                                </StackPanel>
-                            </Border>
-                        </WrapPanel>
+
+                    <!-- Top Section -->
+                    <StackPanel>
+
+                        <TextBlock Text="Obchod"
+                                   Foreground="White"
+                                   FontSize="34"
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,20"/>
+
+                        <!-- SEARCH BAR -->
+                        <Border Width="320"
+                                Height="45"
+                                CornerRadius="22"
+                                Background="#AA2A2A2A"
+                                BorderBrush="#FF444444"
+                                BorderThickness="1"
+                                HorizontalAlignment="Left"
+                                Margin="0,0,0,10">
+
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="🔍"
+                                           FontSize="18"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           Foreground="#DDFFFFFF"/>
+
+                                <TextBox x:Name="SearchBox"
+                                         Grid.Column="1"
+                                         Background="Transparent"
+                                         BorderThickness="0"
+                                         Foreground="Gray"
+                                         FontSize="16"
+                                         VerticalContentAlignment="Center"
+                                         CaretBrush="White"
+                                         Text="Hľadať..."
+                                         TextChanged="SearchBox_TextChanged"
+                                         GotFocus="SearchBox_GotFocus"
+                                         LostFocus="SearchBox_LostFocus"/>
+
+                            </Grid>
+                        </Border>
+
+                    </StackPanel>
+
+                    <!-- Products -->
+                    <ScrollViewer Grid.Row="1"
+                                  Margin="0,20,0,0">
+
+                        <WrapPanel x:Name="ProductsPanel"
+                                   Margin="20"/>
+
                     </ScrollViewer>
+
                 </Grid>
             </Border>
+
         </Grid>
     </Grid>
 </Window>

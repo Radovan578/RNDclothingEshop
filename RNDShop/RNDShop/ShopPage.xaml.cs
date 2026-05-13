@@ -17,6 +17,9 @@ namespace RND_clothing_e_shop
         public ShopPage()
         {
             InitializeComponent();
+
+            SearchBox.Foreground = Brushes.Gray;
+
             NacitajData();
             ZobrazProdukty("Všetko");
         }
@@ -64,6 +67,7 @@ namespace RND_clothing_e_shop
             ProductsPanel.Children.Clear();
 
             List<Produkt> filtrovane;
+
             if (kategoria == "Všetko")
             {
                 filtrovane = VsetkyProdukty;
@@ -149,13 +153,11 @@ namespace RND_clothing_e_shop
 
                 addBtn.Click += (s, e) => AddToCart(prod.Name, prod.Price, prod.ImagePath);
 
-
                 imageContainer.MouseLeftButtonDown += (s, e) =>
                 {
                     new DetailProduktu(prod).Show();
                     this.Close();
                 };
-
 
                 stack.Children.Add(imageContainer);
                 stack.Children.Add(nameTxt);
@@ -167,18 +169,151 @@ namespace RND_clothing_e_shop
             }
         }
 
-        private void AddToCart(string name, decimal price, string imagePath)
+        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (SearchBox.Text == "Hľadať...")
+                return;
+
+            string hladanyText = SearchBox.Text.ToLower();
+
+            ProductsPanel.Children.Clear();
+
+            var filtrovane = VsetkyProdukty
+                .Where(p => p.Name.ToLower().Contains(hladanyText))
+                .ToList();
+
+            foreach (var prod in filtrovane)
+            {
+                Border card = new Border
+                {
+                    Width = 220,
+                    Height = 320,
+                    Background = (Brush)new BrushConverter().ConvertFromString("#FF2A2A2A"),
+                    CornerRadius = new CornerRadius(15),
+                    Margin = new Thickness(10),
+                    Padding = new Thickness(10),
+                    Cursor = Cursors.Hand
+                };
+
+                StackPanel stack = new StackPanel();
+
+                Border imageContainer = new Border
+                {
+                    Height = 120,
+                    Background = Brushes.White,
+                    CornerRadius = new CornerRadius(10),
+                    Margin = new Thickness(0, 0, 0, 10),
+                    Cursor = Cursors.Hand
+                };
+
+                Image img = new Image
+                {
+                    Height = 110,
+                    Stretch = Stretch.Uniform,
+                    Cursor = Cursors.Hand
+                };
+
+                if (!string.IsNullOrEmpty(prod.ImagePath))
+                {
+                    try
+                    {
+                        BitmapImage bi = new BitmapImage();
+                        bi.BeginInit();
+                        bi.UriSource = new Uri(prod.ImagePath, UriKind.RelativeOrAbsolute);
+                        bi.CacheOption = BitmapCacheOption.OnLoad;
+                        bi.EndInit();
+                        img.Source = bi;
+                    }
+                    catch { }
+                }
+
+                imageContainer.Child = img;
+
+                TextBlock nameTxt = new TextBlock
+                {
+                    Text = prod.Name,
+                    Foreground = Brushes.White,
+                    FontSize = 18,
+                    FontWeight = FontWeights.SemiBold,
+                    TextAlignment = TextAlignment.Center
+                };
+
+                TextBlock priceTxt = new TextBlock
+                {
+                    Text = $"{prod.Price:N2} €",
+                    Foreground = Brushes.Gray,
+                    Margin = new Thickness(0, 5, 0, 10),
+                    TextAlignment = TextAlignment.Center
+                };
+
+                Button addBtn = new Button
+                {
+                    Content = "Pridať do košíka",
+                    Height = 40,
+                    Style = (Style)FindResource("RoundedButtonStyle"),
+                    Background = Brushes.White,
+                    Foreground = Brushes.Black,
+                    Cursor = Cursors.Hand
+                };
+
+                addBtn.Click += (s2, e2) => AddToCart(prod.Name, prod.Price, prod.ImagePath);
+
+                imageContainer.MouseLeftButtonDown += (s2, e2) =>
+                {
+                    new DetailProduktu(prod).Show();
+                    this.Close();
+                };
+
+                stack.Children.Add(imageContainer);
+                stack.Children.Add(nameTxt);
+                stack.Children.Add(priceTxt);
+                stack.Children.Add(addBtn);
+
+                card.Child = stack;
+                ProductsPanel.Children.Add(card);
+            }
+        }
+
+        private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (SearchBox.Text == "Hľadať...")
+            {
+                SearchBox.Text = "";
+                SearchBox.Foreground = Brushes.White;
+            }
+        }
+
+        private void SearchBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(SearchBox.Text))
+            {
+                SearchBox.Text = "Hľadať...";
+                SearchBox.Foreground = Brushes.Gray;
+            }
+        }
+
+        private void AddToCart(string name, decimal price, string imagePath, string size = "")
+        {
+            
+
             var polozka = KosikList.FirstOrDefault(p => p.Name == name);
+
             if (polozka != null)
             {
                 polozka.Quantity++;
             }
             else
             {
-
-                KosikList.Add(new Produkt { Name = name, Price = price, Quantity = 1, ImagePath = imagePath });
+                KosikList.Add(new Produkt
+                {
+                    Name = name,
+                    Price = price,
+                    Quantity = 1,
+                    ImagePath = imagePath,
+                    Size = size
+                });
             }
+
             MessageBox.Show($"{name} bol pridaný do košíka.");
         }
 
@@ -198,6 +333,7 @@ namespace RND_clothing_e_shop
         {
             JsonServis.DeleteUsers();
             JsonServis.DeleteKosik();
+
             new MainWindow().Show();
             this.Close();
         }
@@ -210,7 +346,6 @@ namespace RND_clothing_e_shop
         private void BundyCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Bundy");
         private void TopankyCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Topánky");
         private void DoplnkyCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Doplnky");
-
 
         private void AddWhiteShirt_Click(object sender, RoutedEventArgs e)
             => AddToCart("Biele Tričko", 19.99m, "C:\\Users\\cipkod25\\source\\repos\\csharp\\obchod eshop\\RND clothing e-shop\\Images\\biele tricko predok.jpg");
