@@ -45,7 +45,7 @@ namespace RND_clothing_e_shop
                 {
                     Width = 110,
                     Height = 110,
-                    Background = (Brush)new BrushConverter().ConvertFromString("#FF3A3A3A"),
+                    Background = (Brush)new BrushConverter().ConvertFromString("#FFFFFFFF"),
                     CornerRadius = new CornerRadius(14),
                     HorizontalAlignment = HorizontalAlignment.Left
                 };

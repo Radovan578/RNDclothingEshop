@@ -130,7 +130,7 @@
                                     <Border Grid.Column="0"
                                             Width="110"
                                             Height="110"
-                                            Background="#FF3A3A3A"
+                                            Background="#FFFFFBFB"
                                             CornerRadius="14"
                                             HorizontalAlignment="Left">
                                         <TextBlock Text="Obrázok"
@@ -221,7 +221,7 @@
                                     <Border Grid.Column="0"
                                             Width="110"
                                             Height="110"
-                                            Background="#FF3A3A3A"
+                                            Background="White"
                                             CornerRadius="14"
                                             HorizontalAlignment="Left">
                                         <TextBlock Text="Obrázok"
