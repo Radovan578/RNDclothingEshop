@@ -1,0 +1,177 @@
+﻿<Window x:Class="RND_clothing_e_shop.ShippingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Doručenie" WindowState="Maximized" WindowStyle="None" ResizeMode="NoResize" Background="#FF111111">
+
+    <Window.Resources>
+        <!-- Štýl pre tlačidlá -->
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="55"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="14">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Štýl pre TextBoxy (Čierne písmo, Biele pozadie, Stred, Zaoblenie) -->
+        <Style x:Key="ModernTextBox" TargetType="TextBox">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,8,0,18"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="15" BorderBrush="#FF444444" BorderThickness="1">
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="10,0" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Štýl pre ComboBox -->
+        <Style x:Key="ModernComboBox" TargetType="ComboBox">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,8,0,18"/>
+            <Setter Property="Padding" Value="10,0"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <!-- Back Button -->
+        <Button Content="←" Width="70" Height="70" FontSize="30" FontWeight="Bold" Background="#66000000" Foreground="White" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25" Click="BackButton_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="35">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Grid Margin="40,110,40,40">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="420"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Formulár -->
+            <Border Grid.Column="0" Background="#CC1A1A1A" CornerRadius="22" Padding="30" Margin="0,0,20,0">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <TextBlock Text="Doručovacie údaje" Foreground="White" FontSize="34" FontWeight="Bold" Margin="0,0,0,30"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Meno" Foreground="White" FontSize="14"/>
+                                <TextBox x:Name="FirstNameBox" Style="{StaticResource ModernTextBox}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="Priezvisko" Foreground="White" FontSize="14"/>
+                                <TextBox x:Name="LastNameBox" Style="{StaticResource ModernTextBox}"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <TextBlock Text="Email" Foreground="White" FontSize="14"/>
+                        <TextBox x:Name="EmailBox" Style="{StaticResource ModernTextBox}"/>
+
+                        <TextBlock Text="Telefónne číslo" Foreground="White" FontSize="14"/>
+                        <TextBox x:Name="PhoneBox" Style="{StaticResource ModernTextBox}"/>
+
+                        <TextBlock Text="Ulica a číslo domu" Foreground="White" FontSize="14"/>
+                        <TextBox x:Name="StreetBox" Style="{StaticResource ModernTextBox}"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="180"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Mesto" Foreground="White" FontSize="14"/>
+                                <TextBox x:Name="CityBox" Style="{StaticResource ModernTextBox}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="PSČ" Foreground="White" FontSize="14"/>
+                                <TextBox x:Name="ZipBox" Style="{StaticResource ModernTextBox}"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <TextBlock Text="Štát (zadajte pre vyhľadávanie)" Foreground="White" FontSize="14"/>
+                        <ComboBox x:Name="CountryComboBox" 
+                                  Style="{StaticResource ModernComboBox}"
+                                  IsEditable="True" 
+                                  IsReadOnly="False"
+                                  StaysOpenOnEdit="True"
+                                  TextBoxBase.TextChanged="CountryComboBox_TextChanged"
+                                  SelectionChanged="CountryComboBox_SelectionChanged"/>
+
+                        <TextBlock Text="Spôsob dopravy" Foreground="White" FontSize="16" Margin="0,10,0,12"/>
+                        <StackPanel Margin="0,0,0,25">
+                            <RadioButton x:Name="CourierRadio" Content="Kuriér - 4,99 €" Foreground="White" FontSize="16" Margin="0,0,0,12" IsChecked="True" Checked="CourierRadio_Checked"/>
+                            <RadioButton x:Name="PacketaRadio" Content="Packeta - 2,99 €" Foreground="White" FontSize="16" Margin="0,0,0,12" Checked="PacketaRadio_Checked"/>
+                            <RadioButton x:Name="PickupRadio" Content="Osobný odber - zdarma" Foreground="White" FontSize="16" Checked="PickupRadio_Checked"/>
+                        </StackPanel>
+
+                        <TextBlock Text="Spôsob platby" Foreground="White" FontSize="16" Margin="0,0,0,12"/>
+                        <StackPanel>
+                            <!-- TU JE DOPLNENÉ MENO CardPaymentOption -->
+                            <RadioButton x:Name="CardPaymentOption" Content="Platba kartou" Foreground="White" FontSize="16" Margin="0,0,0,12" IsChecked="True"/>
+                            <RadioButton Content="Dobierka" Foreground="White" FontSize="16" Margin="0,0,0,12"/>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+
+            <!-- Zhrnutie -->
+            <Border Grid.Column="1" Background="#CC1A1A1A" CornerRadius="22" Padding="30">
+                <StackPanel>
+                    <TextBlock Text="Zhrnutie" Foreground="White" FontSize="30" FontWeight="Bold" Margin="0,0,0,30"/>
+                    <Border Background="#FF262626" CornerRadius="18" Padding="20" Margin="0,0,0,20">
+                        <StackPanel>
+                            <Grid Margin="0,0,0,14">
+                                <TextBlock Text="Produkty" Foreground="#DDDDDD" FontSize="18"/>
+                                <TextBlock x:Name="ProductsPriceText" HorizontalAlignment="Right" Text="0,00 €" Foreground="White" FontSize="18" FontWeight="SemiBold"/>
+                            </Grid>
+                            <Grid Margin="0,0,0,14">
+                                <TextBlock Text="Doprava" Foreground="#DDDDDD" FontSize="18"/>
+                                <TextBlock x:Name="ShippingPriceText" HorizontalAlignment="Right" Text="0,00 €" Foreground="White" FontSize="18" FontWeight="SemiBold"/>
+                            </Grid>
+                            <Separator Background="#555555" Margin="0,10,0,20"/>
+                            <Grid>
+                                <TextBlock Text="Celkom" Foreground="White" FontSize="24" FontWeight="Bold"/>
+                                <TextBlock x:Name="TotalPriceText" HorizontalAlignment="Right" Text="0,00 €" Foreground="White" FontSize="24" FontWeight="Bold"/>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                    <Button Content="Potvrdiť objednávku" Click="ConfirmOrderButton_Click" Style="{StaticResource RoundedButtonStyle}" Background="White" Foreground="Black" Margin="0,0,0,14"/>
+                    <Button Content="Späť do košíka" Click="BackButton_Click" Style="{StaticResource RoundedButtonStyle}" Background="#FF1F1F1F" Foreground="White" BorderBrush="White" BorderThickness="2"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

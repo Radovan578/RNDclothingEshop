@@ -249,7 +249,7 @@
                                 Click="AddToCartButton_Click"/>
 
                         <Button x:Name="BuyNowButton"
-                                Content="Kúpiť hneď"
+                                Content="Prejsť do košíka"
                                 Style="{StaticResource RoundedButtonStyle}"
                                 Background="#FF1F1F1F"
                                 Foreground="White"

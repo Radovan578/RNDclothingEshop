@@ -28,6 +28,9 @@ namespace RND_clothing_e_shop
             // cena
             ProductPriceText.Text = $"{produkt.Price:N2} €";
 
+            //popis
+            ProductDescriptionText.Text = produkt.Description;
+
             // obrázok
             if (!string.IsNullOrEmpty(produkt.ImagePath))
             {
@@ -49,20 +52,22 @@ namespace RND_clothing_e_shop
         }
         private void AddToCart()
         {
-            string size = ((ComboBoxItem)SizeComboBox.SelectedItem).Content.ToString();
-
             if (SizeComboBox.SelectedItem == null)
             {
-                MessageBox.Show("Vyber veľkosť.");
+                MessageBox.Show("Prosím, vyber si veľkosť!");
                 return;
             }
 
-            var exist = ShopPage.KosikList
-                .FirstOrDefault(p => p.Name == produkt.Name);
+            string size = ((ComboBoxItem)SizeComboBox.SelectedItem).Content.ToString();
+
+            var exist = ShopPage.KosikList.FirstOrDefault(p => p.Name == produkt.Name && p.Size == size);
 
             if (exist != null)
+            {
                 exist.Quantity += quantity;
+            }
             else
+            {
                 ShopPage.KosikList.Add(new Produkt
                 {
                     Name = produkt.Name,
@@ -71,6 +76,10 @@ namespace RND_clothing_e_shop
                     Quantity = quantity,
                     Size = size
                 });
+            }
+
+            quantity = 1;
+            QuantityText.Text = "1";
         }
 
         // BACK button
@@ -83,7 +92,11 @@ namespace RND_clothing_e_shop
         // množstvo -
         private void MinusButton_Click(object sender, RoutedEventArgs e)
         {
-            if (quantity > 1)
+            if (quantity <= 1)
+            {
+
+            }
+            else
                 quantity--;
 
             QuantityText.Text = quantity.ToString();
@@ -105,7 +118,6 @@ namespace RND_clothing_e_shop
 
         private void BuyNowButton_Click(object sender, RoutedEventArgs e)
         {
-            AddToCart();
             new KosikWindow().Show();
             this.Close();
         }
@@ -127,7 +139,5 @@ namespace RND_clothing_e_shop
         {
 
         }
-
-        
     }
 }

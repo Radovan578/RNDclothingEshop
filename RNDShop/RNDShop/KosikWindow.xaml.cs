@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using RND_clothing_e_shop;
 
 namespace RND_clothing_e_shop
 {
@@ -22,10 +23,13 @@ namespace RND_clothing_e_shop
             KosikItemsPanel.Children.Clear();
 
             decimal celkovaSuma = 0;
-
+            int pocetProdukt = 0;
             foreach (var produkt in ShopPage.KosikList)
             {
                 celkovaSuma += produkt.Price * produkt.Quantity;
+
+                pocetProdukt += produkt.Quantity;
+                ProduktCountText.Text = pocetProdukt.ToString();
 
                 Border card = new Border
                 {
@@ -233,16 +237,16 @@ namespace RND_clothing_e_shop
 
         private void OrderButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ShopPage.KosikList.Count > 0)
-            {
-                MessageBox.Show("Objednávka bola úspešne odoslaná!");
-                ShopPage.KosikList.Clear();
-                ZobrazKosik();
-            }
-            else
+            if (ShopPage.KosikList.Count <= 0)
             {
                 MessageBox.Show("Košík je prázdny.");
+                return;
             }
+
+            ShippingWindow shippingWindow = new ShippingWindow();
+            shippingWindow.Show();
+
+            this.Close();
         }
 
         private void ContinueShoppingButton_Click(object sender, RoutedEventArgs e)

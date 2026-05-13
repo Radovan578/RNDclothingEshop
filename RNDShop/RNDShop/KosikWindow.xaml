@@ -322,7 +322,8 @@
                                    Foreground="#DDDDDD"
                                    FontSize="18"/>
                         <TextBlock Grid.Column="1"
-                                   Text="3"
+                                   Name="ProduktCountText"
+                                   Text="0"
                                    Foreground="White"
                                    FontSize="18"
                                    FontWeight="SemiBold"/>
@@ -337,7 +338,7 @@
                                    Foreground="#DDDDDD"
                                    FontSize="18"/>
                         <TextBlock Grid.Column="1"
-                                   Text="4,99 €"
+                                   Text="0,00 €"
                                    Foreground="White"
                                    FontSize="18"
                                    FontWeight="SemiBold"/>
