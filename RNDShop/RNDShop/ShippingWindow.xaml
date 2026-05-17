@@ -4,7 +4,6 @@
         Title="Doručenie" WindowState="Maximized" WindowStyle="None" ResizeMode="NoResize" Background="#FF111111">
 
     <Window.Resources>
-        <!-- Štýl pre tlačidlá -->
         <Style x:Key="RoundedButtonStyle" TargetType="Button">
             <Setter Property="Height" Value="55"/>
             <Setter Property="FontSize" Value="18"/>
@@ -22,7 +21,6 @@
             </Setter>
         </Style>
 
-        <!-- Štýl pre TextBoxy (Čierne písmo, Biele pozadie, Stred, Zaoblenie) -->
         <Style x:Key="ModernTextBox" TargetType="TextBox">
             <Setter Property="Height" Value="50"/>
             <Setter Property="FontSize" Value="16"/>
@@ -42,7 +40,6 @@
             </Setter>
         </Style>
 
-        <!-- Štýl pre ComboBox -->
         <Style x:Key="ModernComboBox" TargetType="ComboBox">
             <Setter Property="Height" Value="50"/>
             <Setter Property="FontSize" Value="16"/>
@@ -56,7 +53,6 @@
     </Window.Resources>
 
     <Grid>
-        <!-- Back Button -->
         <Button Content="←" Width="70" Height="70" FontSize="30" FontWeight="Bold" Background="#66000000" Foreground="White" 
                 HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25" Click="BackButton_Click">
             <Button.Template>
@@ -74,7 +70,6 @@
                 <ColumnDefinition Width="420"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Formulár -->
             <Border Grid.Column="0" Background="#CC1A1A1A" CornerRadius="22" Padding="30" Margin="0,0,20,0">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <StackPanel>
@@ -134,12 +129,11 @@
                         <StackPanel Margin="0,0,0,25">
                             <RadioButton x:Name="CourierRadio" Content="Kuriér - 4,99 €" Foreground="White" FontSize="16" Margin="0,0,0,12" IsChecked="True" Checked="CourierRadio_Checked"/>
                             <RadioButton x:Name="PacketaRadio" Content="Packeta - 2,99 €" Foreground="White" FontSize="16" Margin="0,0,0,12" Checked="PacketaRadio_Checked"/>
-                            <RadioButton x:Name="PickupRadio" Content="Osobný odber - zdarma" Foreground="White" FontSize="16" Checked="PickupRadio_Checked"/>
+                            <RadioButton x:Name="PickupRadio" Content="Osobný odber - zadarmo" Foreground="White" FontSize="16" Checked="PickupRadio_Checked"/>
                         </StackPanel>
 
                         <TextBlock Text="Spôsob platby" Foreground="White" FontSize="16" Margin="0,0,0,12"/>
                         <StackPanel>
-                            <!-- TU JE DOPLNENÉ MENO CardPaymentOption -->
                             <RadioButton x:Name="CardPaymentOption" Content="Platba kartou" Foreground="White" FontSize="16" Margin="0,0,0,12" IsChecked="True"/>
                             <RadioButton Content="Dobierka" Foreground="White" FontSize="16" Margin="0,0,0,12"/>
                         </StackPanel>
@@ -147,7 +141,6 @@
                 </ScrollViewer>
             </Border>
 
-            <!-- Zhrnutie -->
             <Border Grid.Column="1" Background="#CC1A1A1A" CornerRadius="22" Padding="30">
                 <StackPanel>
                     <TextBlock Text="Zhrnutie" Foreground="White" FontSize="30" FontWeight="Bold" Margin="0,0,0,30"/>
@@ -168,6 +161,18 @@
                             </Grid>
                         </StackPanel>
                     </Border>
+
+                    <TextBlock Text="Máš zľavový kód?" Foreground="White" FontSize="14" Margin="0,5,0,0"/>
+                    <Grid Margin="0,0,0,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="DiscountBox" Grid.Column="0" Style="{StaticResource ModernTextBox}" Margin="0,6,0,0" Height="45"/>
+                        <Button x:Name="ApplyDiscountButton" Grid.Column="2" Content="Uplatniť" Click="ApplyDiscountButton_Click" Style="{StaticResource RoundedButtonStyle}" Background="#FF333333" Foreground="White" Width="110" Height="45" Margin="0,6,0,0" FontSize="15"/>
+                    </Grid>
+
                     <Button Content="Potvrdiť objednávku" Click="ConfirmOrderButton_Click" Style="{StaticResource RoundedButtonStyle}" Background="White" Foreground="Black" Margin="0,0,0,14"/>
                     <Button Content="Späť do košíka" Click="BackButton_Click" Style="{StaticResource RoundedButtonStyle}" Background="#FF1F1F1F" Foreground="White" BorderBrush="White" BorderThickness="2"/>
                 </StackPanel>

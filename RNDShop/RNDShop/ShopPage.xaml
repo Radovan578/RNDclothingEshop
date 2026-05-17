@@ -85,7 +85,7 @@
         </Button>
 
         <!-- Logout -->
-        <Button Content="Odhlásiť sa"
+        <Button Content="Opustiť obchod"
                 Width="150"
                 Height="55"
                 FontSize="18"

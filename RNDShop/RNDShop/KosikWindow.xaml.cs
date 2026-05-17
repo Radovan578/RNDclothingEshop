@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using RND_clothing_e_shop;
 
 namespace RND_clothing_e_shop
 {
@@ -24,10 +22,10 @@ namespace RND_clothing_e_shop
 
             decimal celkovaSuma = 0;
             int pocetProdukt = 0;
+
             foreach (var produkt in ShopPage.KosikList)
             {
                 celkovaSuma += produkt.Price * produkt.Quantity;
-
                 pocetProdukt += produkt.Quantity;
                 ProduktCountText.Text = pocetProdukt.ToString();
 
@@ -40,7 +38,6 @@ namespace RND_clothing_e_shop
                 };
 
                 Grid grid = new Grid();
-
                 grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(130) });
                 grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(170) });
@@ -69,9 +66,7 @@ namespace RND_clothing_e_shop
                 {
                     if (!string.IsNullOrEmpty(produkt.ImagePath))
                     {
-                        img.Source = new BitmapImage(
-                            new Uri(System.IO.Path.GetFullPath(produkt.ImagePath)));
-
+                        img.Source = new BitmapImage(new Uri(System.IO.Path.GetFullPath(produkt.ImagePath)));
                         imageBorder.Child = img;
                     }
                     else
@@ -136,11 +131,14 @@ namespace RND_clothing_e_shop
                     HorizontalAlignment = HorizontalAlignment.Center
                 };
 
+                // Tlačidlá dostali priradený objekt priamo do Tagu, aby sme vedeli, na čo klikáme
                 Button minus = new Button
                 {
                     Content = "-",
-                    Style = (Style)FindResource("SmallButtonStyle")
+                    Style = (Style)FindResource("SmallButtonStyle"),
+                    Tag = produkt
                 };
+                minus.Click += MinusButton_Click;
 
                 TextBlock qtyText = new TextBlock
                 {
@@ -155,20 +153,10 @@ namespace RND_clothing_e_shop
                 Button plus = new Button
                 {
                     Content = "+",
-                    Style = (Style)FindResource("SmallButtonStyle")
+                    Style = (Style)FindResource("SmallButtonStyle"),
+                    Tag = produkt
                 };
-
-                minus.Click += (s, e) =>
-                {
-                    MinusButton_Click(produkt);
-                    ZobrazKosik();
-                };
-
-                plus.Click += (s, e) =>
-                {
-                    PlusButton_Click(produkt);
-                    ZobrazKosik();
-                };
+                plus.Click += PlusButton_Click;
 
                 qtyRow.Children.Add(minus);
                 qtyRow.Children.Add(qtyText);
@@ -182,14 +170,10 @@ namespace RND_clothing_e_shop
                     Background = (Brush)new BrushConverter().ConvertFromString("#FFB71C1C"),
                     Foreground = Brushes.White,
                     Cursor = Cursors.Hand,
-                    Style = (Style)FindResource("RoundedButtonStyle")
+                    Style = (Style)FindResource("RoundedButtonStyle"),
+                    Tag = produkt
                 };
-
-                remove.Click += (s, e) =>
-                {
-                    RemoveItem_Click(produkt);
-                    ZobrazKosik();
-                };
+                remove.Click += RemoveItem_Click;
 
                 actionPanel.Children.Add(qtyTitle);
                 actionPanel.Children.Add(qtyRow);
@@ -210,29 +194,43 @@ namespace RND_clothing_e_shop
             TotalPriceTxt.Text = $"{celkovaSuma:F2} €";
         }
 
-        private void MinusButton_Click(Produkt p)
+        // Klasické a prirodzené spracovanie kliknutí cez Tag priradeného tlačidla
+        private void MinusButton_Click(object sender, RoutedEventArgs e)
         {
-            if (p.Quantity > 1)
+            Button btn = sender as Button;
+            if (btn != null && btn.Tag is Produkt produkt)
             {
-                p.Quantity--;
+                if (produkt.Quantity > 1)
+                {
+                    produkt.Quantity--;
+                }
+                else
+                {
+                    ShopPage.KosikList.Remove(produkt);
+                }
+                ZobrazKosik();
             }
-            else
-            {
-                ShopPage.KosikList.Remove(p);
-            }
-            ZobrazKosik();
         }
 
-        private void PlusButton_Click(Produkt p)
+        private void PlusButton_Click(object sender, RoutedEventArgs e)
         {
-            p.Quantity++;
-            ZobrazKosik();
+            Button btn = sender as Button;
+            if (btn != null && btn.Tag is Produkt produkt)
+            {
+                produkt.Quantity++;
+                ZobrazKosik();
+            }
         }
 
-        private void RemoveItem_Click(Produkt p)
+        private void RemoveItem_Click(object sender, RoutedEventArgs e)
         {
-            ShopPage.KosikList.Remove(p);
-            ZobrazKosik();
+            Button btn = sender as Button;
+            if (btn != null && btn.Tag is Produkt produkt)
+            {
+                ShopPage.KosikList.Remove(produkt);
+                MessageBox.Show("Položka bola odstránená z košíka.");
+                ZobrazKosik();
+            }
         }
 
         private void OrderButton_Click(object sender, RoutedEventArgs e)
@@ -245,7 +243,6 @@ namespace RND_clothing_e_shop
 
             ShippingWindow shippingWindow = new ShippingWindow();
             shippingWindow.Show();
-
             this.Close();
         }
 
@@ -261,48 +258,6 @@ namespace RND_clothing_e_shop
             ShopPage shopPage = new ShopPage();
             shopPage.Show();
             this.Close();
-        }
-
-        private void MinusButton_Click(object sender, RoutedEventArgs e)
-        {
-            var tlacidlo = sender as Button;
-            var polozka = tlacidlo?.DataContext as dynamic;
-
-            if (polozka != null)
-            {
-                if (polozka.Quantity > 1)
-                {
-                    polozka.Quantity--;
-                }
-                else
-                {
-                    RemoveItem_Click(sender, e);
-                }
-            }
-        }
-
-        private void PlusButton_Click(object sender, RoutedEventArgs e)
-        {
-            var tlacidlo = sender as Button;
-            var polozka = tlacidlo?.DataContext as dynamic;
-
-            if (polozka != null)
-            {
-                polozka.Quantity++;
-            }
-        }
-
-        private void RemoveItem_Click(object sender, RoutedEventArgs e)
-        {
-            var tlacidlo = sender as Button;
-            var polozka = tlacidlo?.DataContext as dynamic;
-
-            if (polozka != null)
-            {
-
-
-                MessageBox.Show("Položka bola odstránená z košíka.");
-            }
         }
     }
 }

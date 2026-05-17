@@ -59,7 +59,6 @@
 
     <Grid>
 
-        <!-- Video -->
         <MediaElement x:Name="BackgroundVideo"
                       LoadedBehavior="Manual"
                       UnloadedBehavior="Stop"
@@ -68,11 +67,9 @@
                       IsHitTestVisible="False"
                       Panel.ZIndex="0"/>
 
-        <!-- Overlay -->
         <Grid Background="#88000000"
               Panel.ZIndex="1"/>
 
-        <!-- BACK BUTTON -->
         <Button x:Name="BackButton"
                 Content="←"
                 Width="70"
@@ -100,7 +97,6 @@
             </Button.Template>
         </Button>
 
-        <!-- Content -->
         <Viewbox Stretch="Uniform" Panel.ZIndex="2">
             <Grid Width="1400" Height="800">
 

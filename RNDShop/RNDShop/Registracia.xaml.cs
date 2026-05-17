@@ -23,9 +23,10 @@ namespace RND_clothing_e_shop
         {
             InitializeComponent();
             Loaded += MainWindow_Loaded;
-
         }
+
         private AuthServis authServis = new AuthServis();
+
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             BackgroundVideo.Source = new Uri("Videos/wpf projekt rnd.mp4", UriKind.Relative);
@@ -35,11 +36,13 @@ namespace RND_clothing_e_shop
 
             BackgroundVideo.Play();
         }
+
         private void BackgroundVideo_MediaEnded(object sender, RoutedEventArgs e)
         {
             BackgroundVideo.Position = TimeSpan.Zero;
             BackgroundVideo.Play();
         }
+
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
             string username = MenoTextBox.Text;
@@ -53,14 +56,16 @@ namespace RND_clothing_e_shop
 
             if (uspech)
             {
+                // JEDINÁ ZMENA: Ak registrácia prebehne úspešne, vyskočí tento zľavový kód pre košík
+                MessageBox.Show("Ako darček k prvej registrácii získavaš zľavový kód: VITAJ10\n\nZadaj ho pri dokončovaní objednávky v košíku a získaš 10% zľavu na tovar!", "Uvítací bonus 🎉", MessageBoxButton.OK, MessageBoxImage.Information);
+
                 Prihlasenie prihlasenie = new Prihlasenie();
                 prihlasenie.Show();
 
                 this.Close();
-
             }
-
         }
+
         private void BackToLogin_Click(object sender, RoutedEventArgs e)
         {
             Prihlasenie prihlasenie = new Prihlasenie();
@@ -68,6 +73,7 @@ namespace RND_clothing_e_shop
 
             this.Close();
         }
+
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
@@ -76,5 +82,4 @@ namespace RND_clothing_e_shop
             this.Close();
         }
     }
-
 }
