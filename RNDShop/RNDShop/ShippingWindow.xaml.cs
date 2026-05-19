@@ -164,7 +164,7 @@ namespace RND_clothing_e_shop
             MessageBox.Show("Objednávka bola úspešne prijatá a je na ceste k vám!", "Úspech", MessageBoxButton.OK, MessageBoxImage.Information);
 
             if (ShopPage.KosikList != null) ShopPage.KosikList.Clear();
-            new MainWindow().Show();
+            new ShopPage().Show();
             this.Close();
         }
         
