@@ -14,6 +14,7 @@ namespace RND_clothing_e_shop
         public int Quantity { get; set; }
         public string ImagePath { get; set; }
         public string Size { get; set; }
+        public string Color { get; set; }
         public string Description { get; set; }
 
     }

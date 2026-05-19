@@ -167,25 +167,10 @@
 
                         <StackPanel Orientation="Horizontal"
                                     Margin="0,0,0,25">
-                            <Button x:Name="BlackColorButton"
+                            <Button x:Name="ColorButton"
                                     Background="Black"
                                     Style="{StaticResource ColorButtonStyle}"
-                                    Click="BlackColorButton_Click"/>
-
-                            <Button x:Name="WhiteColorButton"
-                                    Background="White"
-                                    Style="{StaticResource ColorButtonStyle}"
-                                    Click="WhiteColorButton_Click"/>
-
-                            <Button x:Name="GrayColorButton"
-                                    Background="Gray"
-                                    Style="{StaticResource ColorButtonStyle}"
-                                    Click="GrayColorButton_Click"/>
-
-                            <Button x:Name="BlueColorButton"
-                                    Background="#FF2D5BFF"
-                                    Style="{StaticResource ColorButtonStyle}"
-                                    Click="BlueColorButton_Click"/>
+                                    Click="ColorButton_Click"/>
                         </StackPanel>
 
                         <TextBlock Text="Veľkosť"

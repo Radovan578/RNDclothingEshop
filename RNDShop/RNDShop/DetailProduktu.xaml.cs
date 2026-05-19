@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace RND_clothing_e_shop
@@ -31,6 +32,8 @@ namespace RND_clothing_e_shop
             //popis
             ProductDescriptionText.Text = produkt.Description;
 
+            ColorButton.Background = (Brush)new BrushConverter().ConvertFromString(produkt.Color);
+            
             // obrázok
             if (!string.IsNullOrEmpty(produkt.ImagePath))
             {
@@ -81,6 +84,7 @@ namespace RND_clothing_e_shop
             quantity = 1;
             QuantityText.Text = "1";
         }
+        
 
         // BACK button
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -123,21 +127,10 @@ namespace RND_clothing_e_shop
         }
 
         // farby (len UI demo)
-        private void BlackColorButton_Click(object sender, RoutedEventArgs e)
+        private void ColorButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
-        private void WhiteColorButton_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
-        private void GrayColorButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void BlueColorButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
