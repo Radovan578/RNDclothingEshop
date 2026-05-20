@@ -21,41 +21,63 @@ namespace RND_clothing_e_shop
     {
         public Prihlasenie()
         {
-            InitializeComponent();
-            Loaded += MainWindow_Loaded;
+            InitializeComponent();         // načíta UI z XAML
+            Loaded += MainWindow_Loaded;    // keď sa okno načíta, spustí sa video pozadie
         }
+
+        // vytvorenie služby na login a registráciu
         private AuthServis authServis = new AuthServis();
+
+        // spustí sa keď sa okno úplne zobrazí
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            // nastaví video ako pozadie
             BackgroundVideo.Source = new Uri("Videos/wpf projekt rnd.mp4", UriKind.Relative);
 
-            // LOOP
+            // keď video skončí, spustí sa loop
             BackgroundVideo.MediaEnded += BackgroundVideo_MediaEnded;
 
+            // spustí video
             BackgroundVideo.Play();
         }
+
+        // keď video skončí
         private void BackgroundVideo_MediaEnded(object sender, RoutedEventArgs e)
         {
+            // vráti video na začiatok
             BackgroundVideo.Position = TimeSpan.Zero;
+            // znova spustí video (loop)
             BackgroundVideo.Play();
         }
+
+        //Login tlacidlo
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            // zoberie text z textboxu (meno alebo email)
             string nameOrEmail = MenoTextBox.Text;
+
+            // zoberie heslo z password boxu
             string password = HesloPasswordBox.Password;
 
+            // zavolá login funkciu z AuthServis
             bool uspech = authServis.Login(nameOrEmail, password);
 
+            // sprava
             MessageBox.Show(authServis.Message);
 
+            // ak login prešiel
             if (uspech)
             {
+                // otvorí shop stránku
                 ShopPage shopPage = new ShopPage();
                 shopPage.Show();
 
+                // zavrie login okno
                 this.Close();
             }
         }
+
+        // Prechod na registraciu
         private void GoToRegister_Click(object sender, RoutedEventArgs e)
         {
             Registracia registracia = new Registracia();
@@ -63,6 +85,8 @@ namespace RND_clothing_e_shop
 
             this.Close();
         }
+        
+        // Sipka naspat
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();

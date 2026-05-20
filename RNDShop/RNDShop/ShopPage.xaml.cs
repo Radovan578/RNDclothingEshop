@@ -23,13 +23,14 @@ namespace RND_clothing_e_shop
             ZobrazProdukty("Všetko");
         }
 
+        // vytvorí zoznam produktov
         private void NacitajData()
         {
             VsetkyProdukty = new List<Produkt>
             {
                 new Produkt { Name = "Biele tričko", Price = 19.99m, Category = "Tričká", Color = "White", ImagePath = "Images/tricko predok.jpeg", Description = "Klasické biele tričko zo 100% bavlny. Ideálny základný kúsok pod mikinu alebo k džínsom." },
 
-                new Produkt { Name = "Čierna mikina", Price = 39.99m, Category = "Mikiny", Color = "Black", ImagePath = "Images/mikina pred.jpeg", Description = "Moderná mikina z príjemného materiálu vhodná na každodenné nosenie. Má pohodlný strih, kvalitné spracovanie a hodí sa ku jeansom aj teplákom." },
+                new Produkt { Name = "Sivá mikina", Price = 39.99m, Category = "Mikiny", Color = "Gray", ImagePath = "Images/mikina pred.jpeg", Description = "Moderná mikina z príjemného materiálu vhodná na každodenné nosenie. Má pohodlný strih, kvalitné spracovanie a hodí sa ku jeansom aj teplákom." },
 
                 new Produkt { Name = "Rifle", Price = 49.99m, Category = "Nohavice", Color = "Black", ImagePath = "Images/rifle predok.jpeg", Description = "Kvalitné džínsy z pevného denimu s mierne vyšúchaným efektom. Klasický strih, ktorý nikdy nevyjde z módy." },
 
@@ -45,7 +46,7 @@ namespace RND_clothing_e_shop
 
                 new Produkt { Name = "Čierne tričko s potlačou", Price = 23.99m, Category = "Tričká", Color = "Black", ImagePath = "Images/cierne tricko s potlacou predok.jpg", Description = "Moderné čierne tričko s výraznou grafikou. Kvalitná potlač odolná voči praniu a príjemný strih." },
 
-                new Produkt { Name = "Rúžové tričko s potlačou", Price = 23.99m, Category = "Tričká", Color = "Pink", ImagePath = "Images/ruzove tricko s potalcou predok.jpg", Description = "Svieže ružové tričko s unikátnym dizajnom. Skvelá voľba pre oživenie vášho každodenného šatníka." },
+                new Produkt { Name = "Ružové tričko s potlačou", Price = 23.99m, Category = "Tričká", Color = "Pink", ImagePath = "Images/ruzove tricko s potalcou predok.jpg", Description = "Svieže ružové tričko s unikátnym dizajnom. Skvelá voľba pre oživenie vášho každodenného šatníka." },
 
                 new Produkt { Name = "Fialová mikina", Price = 39.99m, Category = "Mikiny", Color = "Purple", ImagePath = "Images/fialova mikina predok.jpg", Description = "Štýlová fialová mikina s kapucňou a klokaním vreckom. Hrejivý materiál vás udrží v teple počas chladných dní." },
 
@@ -53,7 +54,7 @@ namespace RND_clothing_e_shop
 
                 new Produkt { Name = "Post Malone mikina", Price = 42.99m, Category = "Mikiny", Color = "Black", ImagePath = "Images/post malone mikina predok.jpg", Description = "Limitovaná edícia mikiny s motívom Post Maloneho. Povinný kúsok pre každého fanúšika moderného streetwearu." },
 
-                new Produkt { Name = "Rúžová mikina", Price = 23.99m, Category = "Mikiny", Color = "Pink", ImagePath = "Images/ruzova mikina.jpg", Description = "Ľahká ružová mikina ideálna na jarné večery. Mäkká podšívka zaisťuje vysoký komfort nosenia." },
+                new Produkt { Name = "Ružová mikina", Price = 23.99m, Category = "Mikiny", Color = "Pink", ImagePath = "Images/ruzova mikina.jpg", Description = "Ľahká ružová mikina ideálna na jarné večery. Mäkká podšívka zaisťuje vysoký komfort nosenia." },
 
                 new Produkt { Name = "Sivá mikina", Price = 39.99m, Category = "Mikiny", Color = "Gray", ImagePath = "Images/siva mikca 4.jpg", Description = "Klasická sivá mikina bez potlače. Vďaka neutrálnemu dizajnu je veľmi ľahko kombinovateľná." },
 
@@ -91,16 +92,16 @@ namespace RND_clothing_e_shop
             };
         }
 
+        // vytvorí zoznam produktov
         private void ZobrazProdukty(string kategoria)
         {
-            ProductsPanel.Children.Clear();
+            ProductsPanel.Children.Clear();  // vymaže staré produkty z UI
 
-            // Prepísané z LINQ na klasický foreach cyklus
             foreach (Produkt prod in VsetkyProdukty)
             {
                 if (kategoria == "Všetko" || prod.Category == kategoria)
                 {
-                    VytvorKartickuProduktu(prod);
+                    VytvorKartickuProduktu(prod);  // zobrazí produkt ako kartu
                 }
             }
         }
@@ -110,20 +111,20 @@ namespace RND_clothing_e_shop
             if (SearchBox.Text == "Hľadať...")
                 return;
 
-            string hladanyText = SearchBox.Text.ToLower();
-            ProductsPanel.Children.Clear();
+            string hladanyText = SearchBox.Text.ToLower();   // vezme text z vyhľadávania
+            ProductsPanel.Children.Clear();    // vymaže produkty
 
-            // Prepísané z LINQ na klasický foreach s podmienkou .Contains
+
             foreach (Produkt prod in VsetkyProdukty)
             {
                 if (prod.Name.ToLower().Contains(hladanyText))
                 {
-                    VytvorKartickuProduktu(prod);
+                    VytvorKartickuProduktu(prod);    // zobrazí len zhodné produkty
                 }
             }
         }
 
-        // Spoločná prehľadná metóda na generovanie UI prvku (kartičky) - odstraňuje duplicitu kódu
+        // vytvorí vizuálnu kartu produktu
         private void VytvorKartickuProduktu(Produkt prod)
         {
             Border card = new Border
@@ -137,8 +138,9 @@ namespace RND_clothing_e_shop
                 Cursor = Cursors.Hand
             };
 
-            StackPanel stack = new StackPanel();
+            StackPanel stack = new StackPanel();   // usporiada prvky vertikálne
 
+            // obal pre obrázok produktu
             Border imageContainer = new Border
             {
                 Height = 120,
@@ -148,8 +150,9 @@ namespace RND_clothing_e_shop
                 Cursor = Cursors.Hand,
                 Tag = prod // Uložíme objekt do Tagu pre neskorší klik
             };
-            imageContainer.MouseLeftButtonDown += ImageContainer_MouseLeftButtonDown;
+            imageContainer.MouseLeftButtonDown += ImageContainer_MouseLeftButtonDown;    // klik na obrázok otvorí detail
 
+            // obrázok produktu
             Image img = new Image
             {
                 Height = 110,
@@ -168,11 +171,12 @@ namespace RND_clothing_e_shop
                     bi.EndInit();
                     img.Source = bi;
                 }
-                catch { }
+                catch { }    // ak sa obrázok nepodarí načítať, nič sa nestane
             }
 
-            imageContainer.Child = img;
+            imageContainer.Child = img;    // vloží obrázok do rámu
 
+            // zobrazí názov produktu
             TextBlock nameTxt = new TextBlock
             {
                 Text = prod.Name,
@@ -182,6 +186,7 @@ namespace RND_clothing_e_shop
                 TextAlignment = TextAlignment.Center
             };
 
+            // zobrazí cenu produktu
             TextBlock priceTxt = new TextBlock
             {
                 Text = $"{prod.Price:N2} €",
@@ -190,6 +195,7 @@ namespace RND_clothing_e_shop
                 TextAlignment = TextAlignment.Center
             };
 
+            // tlačidlo na pridanie do košíka
             Button addBtn = new Button
             {
                 Content = "Pridať do košíka",
@@ -200,34 +206,32 @@ namespace RND_clothing_e_shop
                 Cursor = Cursors.Hand,
                 Tag = prod // Uložíme produkt do Tagu tlačidla
             };
-            addBtn.Click += AddBtn_Click;
+            addBtn.Click += AddBtn_Click;   // klik pridá produkt do košíka
 
-            stack.Children.Add(imageContainer);
-            stack.Children.Add(nameTxt);
-            stack.Children.Add(priceTxt);
-            stack.Children.Add(addBtn);
+            stack.Children.Add(imageContainer);   // pridá obrázok do karty
+            stack.Children.Add(nameTxt);     // pridá názov
+            stack.Children.Add(priceTxt);    // pridá cenu
+            stack.Children.Add(addBtn);      // pridá tlačidlo
 
-            card.Child = stack;
-            ProductsPanel.Children.Add(card);
+            card.Child = stack;          // spojí všetko do karty
+            ProductsPanel.Children.Add(card);    // zobrazí kartu na obrazovke
         }
 
-        // Klasický event namiesto podozrivej lambdy
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            Button btn = sender as Button;
+            Button btn = sender as Button;   // zistí ktoré tlačidlo bolo kliknuté
             if (btn != null && btn.Tag is Produkt prod)
             {
-                AddToCart(prod.Name, prod.Price, prod.ImagePath);
+                AddToCart(prod.Name, prod.Price, prod.ImagePath);   // pridá produkt do košíka
             }
         }
 
-        // Klasický event pre kliknutie na obrázok/detail produktu
         private void ImageContainer_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Border border = sender as Border;
+            Border border = sender as Border;       // zistí kliknutý prvok
             if (border != null && border.Tag is Produkt prod)
             {
-                DetailProduktu detailWindow = new DetailProduktu(prod);
+                DetailProduktu detailWindow = new DetailProduktu(prod);    // otvorí detail produktu
                 detailWindow.Show();
                 this.Close();
             }
@@ -253,24 +257,24 @@ namespace RND_clothing_e_shop
 
         private void AddToCart(string name, decimal price, string imagePath)
         {
-            Produkt polozka = null;
+            Produkt polozka = null;    // premenná pre hľadaný produkt
 
-            // Prepísané z .FirstOrDefault() na klasický hľadací foreach cyklus
-            foreach (var p in KosikList)
+            foreach (var p in KosikList)   
             {
                 if (p.Name == name)
                 {
-                    polozka = p;
+                    polozka = p;     // nájde produkt v košíku
                     break;
                 }
             }
 
             if (polozka != null)
             {
-                polozka.Quantity++;
+                polozka.Quantity++;   // zvýši množstvo
             }
             else
             {
+                // pridá nový produkt do košíka
                 KosikList.Add(new Produkt
                 {
                     Name = name,
@@ -281,7 +285,7 @@ namespace RND_clothing_e_shop
                 });
             }
 
-            MessageBox.Show($"{name} bol pridaný do košíka.");
+            MessageBox.Show($"{name} bol pridaný do košíka.");   // sprava potvrdí akciu
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -298,12 +302,11 @@ namespace RND_clothing_e_shop
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
-            JsonServis.DeleteKosik();
-            new MainWindow().Show();
+            JsonServis.DeleteKosik();    // vymaže uložený košík
+            new MainWindow().Show();      // návrat na hlavnú obrazovku
             this.Close();
         }
 
-        // Kategórie prepísané na normálne ľudské metódy s kučeravými zátvorkami
         private void AllCategory_Click(object sender, RoutedEventArgs e)
         {
             ZobrazProdukty("Všetko");

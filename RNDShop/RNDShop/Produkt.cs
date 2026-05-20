@@ -8,14 +8,14 @@ namespace RND_clothing_e_shop
 {
     public class Produkt
     {
-        public string Name { get; set; }
-        public string Category { get; set; }
-        public decimal Price { get; set; }
-        public int Quantity { get; set; }
-        public string ImagePath { get; set; }
-        public string Size { get; set; }
-        public string Color { get; set; }
-        public string Description { get; set; }
+        public string Name { get; set; }     // nazov produktu
+        public string Category { get; set; }    // kategoria produktu
+        public decimal Price { get; set; }      // cena produktu
+        public int Quantity { get; set; }       // mnozstvo
+        public string ImagePath { get; set; }       // cesta k obrazku
+        public string Size { get; set; }        // velkost produktu
+        public string Color { get; set; }       // farba produktu
+        public string Description { get; set; }   // popis produktu
 
     }
 }

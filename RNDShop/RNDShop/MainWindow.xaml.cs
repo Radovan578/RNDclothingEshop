@@ -18,33 +18,46 @@ namespace RND_clothing_e_shop
     {
         public MainWindow()
         {
+            // načíta všetky UI prvky z XAML (tlačidlá, video, layout)
+
             InitializeComponent();
+
+            // keď sa okno úplne načíta → spustí sa MainWindow_Loaded
             Loaded += MainWindow_Loaded;
         }
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            // nastaví video ako pozadie
             BackgroundVideo.Source = new Uri("Videos/wpf projekt rnd.mp4", UriKind.Relative);
+            // relatívna cesta k videu v projekte
 
-            // LOOP
+            // keď video skončí, zavolá sa metóda loopu
             BackgroundVideo.MediaEnded += BackgroundVideo_MediaEnded;
 
+            // spustí prehrávanie videa
             BackgroundVideo.Play();
         }
 
+        // spustí sa keď video skončí
         private void BackgroundVideo_MediaEnded(object sender, RoutedEventArgs e)
         {
-            BackgroundVideo.Position = TimeSpan.Zero; // vráti na začiatok
-            BackgroundVideo.Play(); // znova spustí
+            BackgroundVideo.Position = TimeSpan.Zero; // vráti na video začiatok
+            BackgroundVideo.Play(); // znova spustí video (loop efekt)
         }
 
+        // Login tlacidlo
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            // vytvorí nové okno pre prihlásenie
             Prihlasenie prihlasenie = new Prihlasenie();
+            // zobrazí login okno
             prihlasenie.Show();
 
+            // zavrie aktuálne hlavné okno
             this.Close();
         }
 
+        // Register tlacidlo
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
             Registracia registracia = new Registracia();
@@ -53,6 +66,7 @@ namespace RND_clothing_e_shop
             this.Close();
         }
 
+        // Spusti aplikaciu bez prihlasenia/vytvorenia uctu
         private void GuestButton_Click(object sender, RoutedEventArgs e)
         {
             ShopPage shopPage = new ShopPage();
