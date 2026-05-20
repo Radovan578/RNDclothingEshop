@@ -14,11 +14,11 @@ namespace RND_clothing_e_shop
         public KosikWindow()
         {
             InitializeComponent(); // načíta UI z XAML súboru
-            ZobrazKosik(); // hneď zobrazí obsah košíka
+            ShowCart(); // hneď zobrazí obsah košíka
         }
 
         // Metóda ktorá vykreslí celý košík na obrazovku
-        private void ZobrazKosik()
+        private void ShowCart()
         {
             // Vymaže staré položky (aby sa nezdvojovali)
             KosikItemsPanel.Children.Clear();
@@ -239,7 +239,7 @@ namespace RND_clothing_e_shop
                 {
                     ShopPage.KosikList.Remove(produkt);  // odstránenie
                 }
-                ZobrazKosik();  // refresh UI
+                ShowCart();  // refresh UI
             }
         }
 
@@ -250,7 +250,7 @@ namespace RND_clothing_e_shop
             if (btn != null && btn.Tag is Produkt produkt)
             {
                 produkt.Quantity++;   // zvýšenie
-                ZobrazKosik();   // refresh UI
+                ShowCart();   // refresh UI
             }
         }
 
@@ -262,7 +262,7 @@ namespace RND_clothing_e_shop
             {
                 ShopPage.KosikList.Remove(produkt);        // odstránenie z listu
                 MessageBox.Show("Položka bola odstránená z košíka.");      // hláška
-                ZobrazKosik();    // refresh UI
+                ShowCart();    // refresh UI
             }
         }
         
