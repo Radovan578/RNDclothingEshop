@@ -10,25 +10,33 @@ namespace RND_clothing_e_shop
 {
     public partial class KosikWindow : Window
     {
+        // Konštruktor - spustí sa pri otvorení okna
         public KosikWindow()
         {
-            InitializeComponent();
-            ZobrazKosik();
+            InitializeComponent(); // načíta UI z XAML súboru
+            ZobrazKosik(); // hneď zobrazí obsah košíka
         }
 
+        // Metóda ktorá vykreslí celý košík na obrazovku
         private void ZobrazKosik()
         {
+            // Vymaže staré položky (aby sa nezdvojovali)
             KosikItemsPanel.Children.Clear();
 
-            decimal celkovaSuma = 0;
-            int pocetProdukt = 0;
+            decimal celkovaSuma = 0;      // zaciatocna cena košíka
+            int pocetProdukt = 0;         // zaciatocny počet kusov
 
-            foreach (var produkt in ShopPage.KosikList)
+            // Prejde všetky produkty v košíku
+            foreach (Produkt produkt in ShopPage.KosikList)
             {
+                // vypočíta cenu (cena * množstvo)
                 celkovaSuma += produkt.Price * produkt.Quantity;
+                // spočíta počet kusov
                 pocetProdukt += produkt.Quantity;
+                // zobrazí počet produktov v UI
                 ProduktCountText.Text = pocetProdukt.ToString();
 
+                //Vytvorenie karty produktu
                 Border card = new Border
                 {
                     Background = (Brush)new BrushConverter().ConvertFromString("#FF262626"),
@@ -37,11 +45,13 @@ namespace RND_clothing_e_shop
                     Margin = new Thickness(0, 0, 0, 16)
                 };
 
+                // rozloženie karty (3 stĺpce)
                 Grid grid = new Grid();
                 grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(130) });
                 grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(170) });
 
+                //Vytvorenie obrazka
                 Border imageBorder = new Border
                 {
                     Width = 110,
@@ -51,6 +61,7 @@ namespace RND_clothing_e_shop
                     HorizontalAlignment = HorizontalAlignment.Left
                 };
 
+                // text ak obrázok neexistuje
                 TextBlock placeholder = new TextBlock
                 {
                     Text = "Obrázok",
@@ -64,27 +75,34 @@ namespace RND_clothing_e_shop
 
                 try
                 {
+                    // ak existuje cesta k obrázku
                     if (!string.IsNullOrEmpty(produkt.ImagePath))
                     {
+                        // načíta obrázok zo súboru
                         img.Source = new BitmapImage(new Uri(System.IO.Path.GetFullPath(produkt.ImagePath)));
+                        // vloží obrázok do rámika
                         imageBorder.Child = img;
                     }
                     else
                     {
+                        // ak obrázok neexistuje, zobrazí text
                         imageBorder.Child = placeholder;
                     }
                 }
                 catch
                 {
+                    // ak nastane chyba pri načítaní obrázka > fallback text
                     imageBorder.Child = placeholder;
                 }
 
+                //Info o produkte
                 StackPanel infoPanel = new StackPanel
                 {
                     Margin = new Thickness(10, 0, 20, 0),
                     VerticalAlignment = VerticalAlignment.Center
                 };
 
+                // názov produktu
                 infoPanel.Children.Add(new TextBlock
                 {
                     Text = produkt.Name,
@@ -94,6 +112,7 @@ namespace RND_clothing_e_shop
                     Margin = new Thickness(0, 0, 0, 8)
                 });
 
+                // cena za kus
                 infoPanel.Children.Add(new TextBlock
                 {
                     Text = $"Cena za kus: {produkt.Price:N2} €",
@@ -102,6 +121,7 @@ namespace RND_clothing_e_shop
                     Margin = new Thickness(0, 0, 0, 6)
                 });
 
+                // veľkosť produktu
                 infoPanel.Children.Add(new TextBlock
                 {
                     Text = $"Veľkosť: {produkt.Size}",
@@ -109,6 +129,7 @@ namespace RND_clothing_e_shop
                     FontSize = 15
                 });
 
+                //Ovladacie tlacidla
                 StackPanel actionPanel = new StackPanel
                 {
                     VerticalAlignment = VerticalAlignment.Center,
@@ -125,21 +146,24 @@ namespace RND_clothing_e_shop
                     Margin = new Thickness(0, 0, 0, 8)
                 };
 
+                // horizontálny riadok: -  číslo  +
                 StackPanel qtyRow = new StackPanel
                 {
                     Orientation = Orientation.Horizontal,
                     HorizontalAlignment = HorizontalAlignment.Center
                 };
 
-                // Tlačidlá dostali priradený objekt priamo do Tagu, aby sme vedeli, na čo klikáme
+                //Minus tlacidlo
                 Button minus = new Button
                 {
                     Content = "-",
                     Style = (Style)FindResource("SmallButtonStyle"),
                     Tag = produkt
+                    // uloží referenciu na produkt
                 };
                 minus.Click += MinusButton_Click;
 
+                // zobrazí aktuálne množstvo
                 TextBlock qtyText = new TextBlock
                 {
                     Text = produkt.Quantity.ToString(),
@@ -149,7 +173,8 @@ namespace RND_clothing_e_shop
                     TextAlignment = TextAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Center
                 };
-
+                
+                //Plus tlacidlo
                 Button plus = new Button
                 {
                     Content = "+",
@@ -158,10 +183,12 @@ namespace RND_clothing_e_shop
                 };
                 plus.Click += PlusButton_Click;
 
+                // pridanie do riadku
                 qtyRow.Children.Add(minus);
                 qtyRow.Children.Add(qtyText);
                 qtyRow.Children.Add(plus);
 
+                // Tlacidlo odstranenia produktu
                 Button remove = new Button
                 {
                     Content = "Odstrániť",
@@ -175,10 +202,12 @@ namespace RND_clothing_e_shop
                 };
                 remove.Click += RemoveItem_Click;
 
+                // pridanie do panelu
                 actionPanel.Children.Add(qtyTitle);
                 actionPanel.Children.Add(qtyRow);
                 actionPanel.Children.Add(remove);
 
+                //Zlozenie karty
                 Grid.SetColumn(imageBorder, 0);
                 Grid.SetColumn(infoPanel, 1);
                 Grid.SetColumn(actionPanel, 2);
@@ -189,12 +218,14 @@ namespace RND_clothing_e_shop
 
                 card.Child = grid;
                 KosikItemsPanel.Children.Add(card);
+                // pridanie karty do UI
             }
 
+            // zobrazenie celkovej ceny
             TotalPriceTxt.Text = $"{celkovaSuma:F2} €";
         }
 
-        // Klasické a prirodzené spracovanie kliknutí cez Tag priradeného tlačidla
+        // Button na znizenie mnozstva
         private void MinusButton_Click(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
@@ -202,37 +233,40 @@ namespace RND_clothing_e_shop
             {
                 if (produkt.Quantity > 1)
                 {
-                    produkt.Quantity--;
+                    produkt.Quantity--;  // zníženie
                 }
                 else
                 {
-                    ShopPage.KosikList.Remove(produkt);
+                    ShopPage.KosikList.Remove(produkt);  // odstránenie
                 }
-                ZobrazKosik();
+                ZobrazKosik();  // refresh UI
             }
         }
 
+        // Button na zvysenie mnozstva
         private void PlusButton_Click(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
             if (btn != null && btn.Tag is Produkt produkt)
             {
-                produkt.Quantity++;
-                ZobrazKosik();
+                produkt.Quantity++;   // zvýšenie
+                ZobrazKosik();   // refresh UI
             }
         }
 
+        // Button na odstranenie produktu
         private void RemoveItem_Click(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
             if (btn != null && btn.Tag is Produkt produkt)
             {
-                ShopPage.KosikList.Remove(produkt);
-                MessageBox.Show("Položka bola odstránená z košíka.");
-                ZobrazKosik();
+                ShopPage.KosikList.Remove(produkt);        // odstránenie z listu
+                MessageBox.Show("Položka bola odstránená z košíka.");      // hláška
+                ZobrazKosik();    // refresh UI
             }
         }
-
+        
+        // Objednavka
         private void OrderButton_Click(object sender, RoutedEventArgs e)
         {
             if (ShopPage.KosikList.Count <= 0)
@@ -241,11 +275,13 @@ namespace RND_clothing_e_shop
                 return;
             }
 
+            // vytvorenie novej stránky objednávky
             ShippingWindow shippingWindow = new ShippingWindow();
-            shippingWindow.Show();
-            this.Close();
+            shippingWindow.Show();      // otvorí nové okno
+            this.Close();       // zatvorí aktuálne okno
         }
 
+        // Tlacidlo ktore vracia na shop page
         private void ContinueShoppingButton_Click(object sender, RoutedEventArgs e)
         {
             ShopPage shopPage = new ShopPage();
@@ -253,6 +289,7 @@ namespace RND_clothing_e_shop
             this.Close();
         }
 
+        // Sipka ktora vracia na shop page
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             ShopPage shopPage = new ShopPage();

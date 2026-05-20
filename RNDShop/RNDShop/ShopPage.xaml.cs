@@ -96,7 +96,7 @@ namespace RND_clothing_e_shop
             ProductsPanel.Children.Clear();
 
             // Prepísané z LINQ na klasický foreach cyklus
-            foreach (var prod in VsetkyProdukty)
+            foreach (Produkt prod in VsetkyProdukty)
             {
                 if (kategoria == "Všetko" || prod.Category == kategoria)
                 {
@@ -114,7 +114,7 @@ namespace RND_clothing_e_shop
             ProductsPanel.Children.Clear();
 
             // Prepísané z LINQ na klasický foreach s podmienkou .Contains
-            foreach (var prod in VsetkyProdukty)
+            foreach (Produkt prod in VsetkyProdukty)
             {
                 if (prod.Name.ToLower().Contains(hladanyText))
                 {

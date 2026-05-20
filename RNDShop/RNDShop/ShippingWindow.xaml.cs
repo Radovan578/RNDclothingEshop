@@ -25,7 +25,7 @@ namespace RND_clothing_e_shop
         {
             List<string> countries = new List<string>
             {
-                "Slovensko", "Cesko", "Polsko", "Madarsko", "Raksuko", "", "United Kingdom"
+                "Slovensko", "Cesko", "Polsko", "Madarsko", "Rakusko", "", "United Kingdom"
             };
 
             CountryComboBox.ItemsSource = countries;
