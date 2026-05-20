@@ -19,6 +19,9 @@ namespace RND_clothing_e_shop
 
             SearchBox.Foreground = Brushes.Gray;
 
+            // DYNAMICKÉ MENO: Načíta meno používateľa, ktorý sa reálne prihlásil cez MainWindow
+            ProfileNameText.Text = string.IsNullOrEmpty(MainWindow.PrihlasenyUzivatel) ? "Hosť" : MainWindow.PrihlasenyUzivatel;
+
             NacitajData();
             ZobrazProdukty("Všetko");
         }
@@ -86,9 +89,9 @@ namespace RND_clothing_e_shop
 
                 new Produkt { Name = "Regular fit rifle", Price = 39.99m, Category = "Nohavice", Color = "Black", ImagePath = "Images/baggy jeans 5.jpg", Description = "Tradičné džínsy rovného strihu. Ideálna voľba pre those, ktorí preferujú klasický vzhľad." },
 
-                new Produkt { Name = "Straight fit rifle", Price = 39.99m, Category = "Nohavice", Color = "White", ImagePath = "Images/baggy jeans 6.jpg", Description = "Džínsy s rovnými nohavicami a precíznym spracovaním. Hodia sa k teniskám aj topánkam." },
+                new Produkt { Name = "Straight fit rifle", Price = 39.99m, Category = "Nohavice", Color = "White", ImagePath = "Images/baggy jeans 6.jpg", Description = "Džínsy s rovnými nohavicami and precíznym spracovaním. Hodia sa k teniskám aj topánkam." },
 
-                new Produkt { Name = "Baggy rifle", Price = 39.99m, Category = "Nohavice", Color = "LightBlue", ImagePath = "Images/baggy jeans 7.jpg", Description = "Extra voľné baggy džínsy. Maximálne pohodlie a autentický streetwear štýl." },
+                new Produkt { Name = "Baggy rifle", Price = 39.99m, Category = "Nohavice", Color = "LightBlue", ImagePath = "Images/baggy jeans 7.jpg", Description = "Extra voľné baggy džínsy. Maximálne pohodlie and autentický streetwear štýl." },
             };
         }
 
@@ -259,7 +262,7 @@ namespace RND_clothing_e_shop
         {
             Produkt polozka = null;    // premenná pre hľadaný produkt
 
-            foreach (var p in KosikList)   
+            foreach (var p in KosikList)
             {
                 if (p.Name == name)
                 {
@@ -360,6 +363,48 @@ namespace RND_clothing_e_shop
         private void AddJacket_Click(object sender, RoutedEventArgs e)
         {
             AddToCart("Bunda", 89.99m, "C:\\Users\\cipkod25\\source\\repos\\csharp\\obchod eshop\\RND clothing e-shop\\Images\\bunda predok.jpg");
+        }
+
+        // ==========================================
+        // OBSLUHA PROFILU
+        // ==========================================
+
+        // =======================================================
+        // OBSLUHA PROFILU UŽÍVATEĽA (SPOJAZDNENÉ HISTÓRIE A SLEDOVANIA)
+        // =======================================================
+
+        // Otvorenie / skrytie profilového menu
+        private void ProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            ProfilePopup.Visibility = ProfilePopup.Visibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        // Zatvorenie profilového menu
+        private void CloseProfile_Click(object sender, RoutedEventArgs e)
+        {
+            ProfilePopup.Visibility = Visibility.Collapsed;
+        }
+
+        // KLIKNUTIE NA: Sledovať objednávku
+        private void TrackOrder_Click(object sender, RoutedEventArgs e)
+        {
+            // Skryjeme vyskakovacie menu profilu
+            ProfilePopup.Visibility = Visibility.Collapsed;
+
+            // Otvoríme naše nové okno sledovania zásielky
+            SledovanieWindow sledovanieOkna = new SledovanieWindow();
+            sledovanieOkna.ShowDialog(); // ShowDialog spôsobí, že sa otvorí ako nadradené okno
+        }
+
+        // KLIKNUTIE NA: História nákupov
+        private void History_Click(object sender, RoutedEventArgs e)
+        {
+            // Skryjeme vyskakovacie menu profilu
+            ProfilePopup.Visibility = Visibility.Collapsed;
+
+            // Otvoríme naše nové okno histórie nákupov
+            HistoriaWindow historiaOkna = new HistoriaWindow();
+            historiaOkna.ShowDialog();
         }
     }
 }

@@ -68,6 +68,9 @@ namespace RND_clothing_e_shop
             // ak login prešiel
             if (uspech)
             {
+                // KĽÚČOVÁ OPRAVA: Uložíme meno úspešne prihláseného užívateľa do globálnej premennej
+                MainWindow.PrihlasenyUzivatel = nameOrEmail;
+
                 // otvorí shop stránku
                 ShopPage shopPage = new ShopPage();
                 shopPage.Show();
@@ -85,7 +88,7 @@ namespace RND_clothing_e_shop
 
             this.Close();
         }
-        
+
         // Sipka naspat
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
@@ -94,7 +97,5 @@ namespace RND_clothing_e_shop
 
             this.Close();
         }
-
     }
-
 }

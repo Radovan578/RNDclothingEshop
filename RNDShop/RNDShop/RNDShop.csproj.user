@@ -10,6 +10,9 @@
     <Compile Update="DetailProduktu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="HistoriaWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="KosikWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -26,6 +29,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ShopPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SledovanieWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

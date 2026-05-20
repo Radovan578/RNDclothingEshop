@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,15 +17,19 @@ namespace RND_clothing_e_shop
     /// </summary>
     public partial class MainWindow : Window
     {
+        // OPRAVA CHYBY CS0117: Pridaná statická premenná, ktorú hľadá ShopPage
+        // Predvolene je nastavená na "Hosť", ak by niekto klikol na "Pokračovať ako Hosť"
+        public static string PrihlasenyUzivatel = "Hosť";
+
         public MainWindow()
         {
             // načíta všetky UI prvky z XAML (tlačidlá, video, layout)
-
             InitializeComponent();
 
             // keď sa okno úplne načíta → spustí sa MainWindow_Loaded
             Loaded += MainWindow_Loaded;
         }
+
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             // nastaví video ako pozadie
@@ -69,6 +74,9 @@ namespace RND_clothing_e_shop
         // Spusti aplikaciu bez prihlasenia/vytvorenia uctu
         private void GuestButton_Click(object sender, RoutedEventArgs e)
         {
+            // Pre istotu nastavíme, že ide o hosťa
+            MainWindow.PrihlasenyUzivatel = "Hosť";
+
             ShopPage shopPage = new ShopPage();
             shopPage.Show();
 

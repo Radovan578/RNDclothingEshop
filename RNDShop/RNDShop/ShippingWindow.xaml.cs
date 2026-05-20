@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;                  // PRIDANÉ: Potrebné pre prácu so súbormi (json)
+using System.Text.Json;           // PRIDANÉ: Potrebné pre ukladanie objednávok
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Text.RegularExpressions; // Pridané pre kontrolu znakov pomocou Regex
 
 namespace RND_clothing_e_shop
 {
@@ -25,10 +27,10 @@ namespace RND_clothing_e_shop
         {
             InitializeComponent(); // načíta UI z XAML
 
-            PopulateCountries();  // naplní zoznam krajín
+            PopulateCountries();   // naplní zoznam krajín
 
             InitializeCouponStatus();  // nastaví UI stav kupónu
-            
+
             CalculatePrice();    // prvý výpočet ceny
         }
 
@@ -222,9 +224,60 @@ namespace RND_clothing_e_shop
                 if (vysledok != true) return;  // zrušenie platby
             }
 
-            MessageBox.Show("Objednávka bola úspešne prijatá a je na ceste k vám!", "Úspech", MessageBoxButton.OK, MessageBoxImage.Information);
+            // =============================================================
+            // OPRAVA: TU UKLADÁME REÁLNU OBJEDNÁVKU DO SÚBORU PRE HISTÓRIU
+            // =============================================================
+            List<Objednavka> zoznamObjednavok = new List<Objednavka>();
+            string subor = "objednavky.json";
 
-            if (ShopPage.KosikList != null) ShopPage.KosikList.Clear();  // vymazanie košíka
+            // Ak už nejaké staré objednávky v systéme existujú, načítame ich najskôr
+            if (File.Exists(subor))
+            {
+                try
+                {
+                    string staryJson = File.ReadAllText(subor);
+                    zoznamObjednavok = JsonSerializer.Deserialize<List<Objednavka>>(staryJson) ?? new List<Objednavka>();
+                }
+                catch
+                {
+                    zoznamObjednavok = new List<Objednavka>();
+                }
+            }
+
+            // Vypočítame finálnu sumu po zľave vrátane dopravy
+            decimal zlavaVSumach = cenaProduktov * percentualnaZlava;
+            decimal cenaProduktovPoZlave = cenaProduktov - zlavaVSumach;
+            decimal celkovaDoprava = zakladnaCenaDopravy + prplatokZaStat;
+            decimal konecnaCena = cenaProduktovPoZlave + celkovaDoprava;
+
+            // Vytvorenie nového objektu objednávky
+            Objednavka novaObjednavka = new Objednavka
+            {
+                IdObjednavky = "#" + new Random().Next(10000, 99999).ToString(), // Náhodné číslo balíka
+                Uzivatel = MainWindow.PrihlasenyUzivatel,                        // Priradenie k menu (Daniel, Hosť...)
+                Datum = DateTime.Now,
+                CelkovaCena = konecnaCena,
+                StavZasielky = "Spracováva sa v sklade"
+            };
+
+            // Ak sú v košíku položky, prekopírujeme ich do objednávky
+            if (ShopPage.KosikList != null)
+            {
+                novaObjednavka.Produkty.AddRange(ShopPage.KosikList);
+            }
+
+            // Pridanie do zoznamu a uloženie na disk
+            zoznamObjednavok.Add(novaObjednavka);
+            string novyJson = JsonSerializer.Serialize(zoznamObjednavok);
+            File.WriteAllText(subor, novyJson);
+
+            // Úspešná hláška
+            MessageBox.Show("Objednávka bola úspešne prijatá a zaregistrovaná vo vašom profile!", "Úspech 🎉", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            // Vymazanie košíka, keďže sa tovar už kúpil
+            if (ShopPage.KosikList != null) ShopPage.KosikList.Clear();
+
+            // Presmerovanie späť do obchodu
             new ShopPage().Show();
             this.Close();
         }
@@ -259,8 +312,57 @@ namespace RND_clothing_e_shop
             // blokovanie iných znakov
             if (!char.IsDigit(e.Text, 0))
             {
-                e.Handled = true; 
+                e.Handled = true;
             }
+        }
+
+        // ==========================================
+        //  PRIDANÉ METÓDY PRE PROFIL A OPUSTENIE OBCHODU
+        // ==========================================
+
+        // Otvorenie / Zatvorenie profilového menu (prepínanie viditeľnosti)
+        private void ProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ProfilePopup != null)
+            {
+                if (ProfilePopup.Visibility == Visibility.Visible)
+                {
+                    ProfilePopup.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    ProfilePopup.Visibility = Visibility.Visible;
+                }
+            }
+        }
+
+        // Tlačidlo zavrieť priamo v menu
+        private void CloseProfile_Click(object sender, RoutedEventArgs e)
+        {
+            if (ProfilePopup != null) ProfilePopup.Visibility = Visibility.Collapsed;
+        }
+
+        // Akcia na tlačidlo Opustiť obchod (nahrádza staré tlačidlo späť, alebo ho upravuje)
+        private void LeaveStoreButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult odpoved = MessageBox.Show("Naozaj chcete opustiť košík? Váš výber tovaru zostane zachovaný.", "Opustiť doručenie", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (odpoved == MessageBoxResult.Yes)
+            {
+                // Vráti používateľa na hlavnú stránku obchodu a zavrie toto okno
+                new ShopPage().Show();
+                this.Close();
+            }
+        }
+
+        // OPRAVA: Tlačidlo Sledovať objednávku teraz reálne otvorí okno sledovania!
+        private void TrackOrder_Click(object sender, RoutedEventArgs e)
+        {
+            if (ProfilePopup != null) ProfilePopup.Visibility = Visibility.Collapsed;
+
+            // Otvorenie reálneho okna namiesto natvrdo napísanej správy
+            SledovanieWindow sledovanie = new SledovanieWindow();
+            sledovanie.ShowDialog();
         }
     }
 }
