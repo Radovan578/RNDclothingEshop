@@ -19,7 +19,7 @@ namespace RND_clothing_e_shop
 
             SearchBox.Foreground = Brushes.Gray;
 
-            // DYNAMICKÉ MENO: Načíta meno používateľa, ktorý sa reálne prihlásil cez MainWindow
+            // Načíta meno používateľa, ktorý sa reálne prihlásil cez MainWindow
             ProfileNameText.Text = string.IsNullOrEmpty(MainWindow.PrihlasenyUzivatel) ? "Hosť" : MainWindow.PrihlasenyUzivatel;
 
             NacitajData();
@@ -365,15 +365,6 @@ namespace RND_clothing_e_shop
             AddToCart("Bunda", 89.99m, "C:\\Users\\cipkod25\\source\\repos\\csharp\\obchod eshop\\RND clothing e-shop\\Images\\bunda predok.jpg");
         }
 
-        // ==========================================
-        // OBSLUHA PROFILU
-        // ==========================================
-
-        // =======================================================
-        // OBSLUHA PROFILU UŽÍVATEĽA (SPOJAZDNENÉ HISTÓRIE A SLEDOVANIA)
-        // =======================================================
-
-        // Otvorenie / skrytie profilového menu
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
         {
             ProfilePopup.Visibility = ProfilePopup.Visibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed;
@@ -385,7 +376,7 @@ namespace RND_clothing_e_shop
             ProfilePopup.Visibility = Visibility.Collapsed;
         }
 
-        // KLIKNUTIE NA: Sledovať objednávku
+        
         private void TrackOrder_Click(object sender, RoutedEventArgs e)
         {
             // Skryjeme vyskakovacie menu profilu
@@ -396,7 +387,7 @@ namespace RND_clothing_e_shop
             sledovanieOkna.ShowDialog(); // ShowDialog spôsobí, že sa otvorí ako nadradené okno
         }
 
-        // KLIKNUTIE NA: História nákupov
+       
         private void History_Click(object sender, RoutedEventArgs e)
         {
             // Skryjeme vyskakovacie menu profilu

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;                  // PRIDANÉ: Potrebné pre prácu so súbormi (json)
-using System.Text.Json;           // PRIDANÉ: Potrebné pre ukladanie objednávok
+using System.IO;                  
+using System.Text.Json;           
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,13 +25,13 @@ namespace RND_clothing_e_shop
 
         public ShippingWindow()
         {
-            InitializeComponent(); // načíta UI z XAML
+            InitializeComponent(); 
 
-            PopulateCountries();   // naplní zoznam krajín
+            PopulateCountries();   
 
-            InitializeCouponStatus();  // nastaví UI stav kupónu
+            InitializeCouponStatus();  
 
-            CalculatePrice();    // prvý výpočet ceny
+            CalculatePrice();   
         }
 
         // Nastavenie počiatočného stavu pre info text o kupóne
@@ -119,7 +119,7 @@ namespace RND_clothing_e_shop
                 MessageBox.Show("Tento zľavový kód nie je platný alebo vypršala jeho platnosť.", "Neplatný kód ❌", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            // Po kliknutí hneď prepočítame celkovú sumu na obrazovke
+            // Po kliknutí hneď prepočíta celkovú sumu na obrazovke
             CalculatePrice();
         }
 
@@ -224,9 +224,6 @@ namespace RND_clothing_e_shop
                 if (vysledok != true) return;  // zrušenie platby
             }
 
-            // =============================================================
-            // OPRAVA: TU UKLADÁME REÁLNU OBJEDNÁVKU DO SÚBORU PRE HISTÓRIU
-            // =============================================================
             List<Objednavka> zoznamObjednavok = new List<Objednavka>();
             string subor = "objednavky.json";
 
@@ -316,10 +313,6 @@ namespace RND_clothing_e_shop
             }
         }
 
-        // ==========================================
-        //  PRIDANÉ METÓDY PRE PROFIL A OPUSTENIE OBCHODU
-        // ==========================================
-
         // Otvorenie / Zatvorenie profilového menu (prepínanie viditeľnosti)
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
         {
@@ -355,7 +348,7 @@ namespace RND_clothing_e_shop
             }
         }
 
-        // OPRAVA: Tlačidlo Sledovať objednávku teraz reálne otvorí okno sledovania!
+        //Tlačidlo Sledovať objednávku teraz reálne otvorí okno sledovania
         private void TrackOrder_Click(object sender, RoutedEventArgs e)
         {
             if (ProfilePopup != null) ProfilePopup.Visibility = Visibility.Collapsed;

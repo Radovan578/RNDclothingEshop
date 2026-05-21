@@ -10,6 +10,6 @@ namespace RND_clothing_e_shop
         public DateTime Datum { get; set; }
         public List<Produkt> Produkty { get; set; } = new List<Produkt>();
         public decimal CelkovaCena { get; set; }
-        public string StavZasielky { get; set; } = "Spracováva sa v sklade";
+        public string StavZasielky { get; set; } = "Vašu objednávku momentálne spravujeme";
     }
 }
