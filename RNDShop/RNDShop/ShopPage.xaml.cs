@@ -19,14 +19,14 @@ namespace RND_clothing_e_shop
 
             SearchBox.Foreground = Brushes.Gray;
 
-            // Načíta meno používateľa, ktorý sa reálne prihlásil cez MainWindow
+            // nacita meno pouzivatela ktory sa prihlasil cez mainwindow a zobrazi ho v pravom hornom rohu, ak sa nikto neprihlasil, zobrazi "Host"
             ProfileNameText.Text = string.IsNullOrEmpty(MainWindow.PrihlasenyUzivatel) ? "Hosť" : MainWindow.PrihlasenyUzivatel;
 
             NacitajData();
             ZobrazProdukty("Všetko");
         }
 
-        // vytvorí zoznam produktov
+        // vytvori zoznam produktov
         private void NacitajData()
         {
             VsetkyProdukty = new List<Produkt>
@@ -95,16 +95,16 @@ namespace RND_clothing_e_shop
             };
         }
 
-        // vytvorí zoznam produktov
+        // vytvori zoznam produktov
         private void ZobrazProdukty(string kategoria)
         {
-            ProductsPanel.Children.Clear();  // vymaže staré produkty z UI
+            ProductsPanel.Children.Clear();  // vymaze stare produkty z UI
 
             foreach (Produkt prod in VsetkyProdukty)
             {
                 if (kategoria == "Všetko" || prod.Category == kategoria)
                 {
-                    VytvorKartickuProduktu(prod);  // zobrazí produkt ako kartu
+                    VytvorKartickuProduktu(prod);  // zobrazi produkt ako kartu
                 }
             }
         }
@@ -114,15 +114,15 @@ namespace RND_clothing_e_shop
             if (SearchBox.Text == "Hľadať...")
                 return;
 
-            string hladanyText = SearchBox.Text.ToLower();   // vezme text z vyhľadávania
-            ProductsPanel.Children.Clear();    // vymaže produkty
+            string hladanyText = SearchBox.Text.ToLower();   // vezme text z vyhladavania
+            ProductsPanel.Children.Clear();    // vymaze produkty
 
 
             foreach (Produkt prod in VsetkyProdukty)
             {
                 if (prod.Name.ToLower().Contains(hladanyText))
                 {
-                    VytvorKartickuProduktu(prod);    // zobrazí len zhodné produkty
+                    VytvorKartickuProduktu(prod);    // zobrazi len zhodne produkty
                 }
             }
         }
@@ -370,7 +370,7 @@ namespace RND_clothing_e_shop
             ProfilePopup.Visibility = ProfilePopup.Visibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed;
         }
 
-        // Zatvorenie profilového menu
+        // zatvorenie profilového menu
         private void CloseProfile_Click(object sender, RoutedEventArgs e)
         {
             ProfilePopup.Visibility = Visibility.Collapsed;
@@ -379,10 +379,10 @@ namespace RND_clothing_e_shop
         
         private void TrackOrder_Click(object sender, RoutedEventArgs e)
         {
-            // Skryjeme vyskakovacie menu profilu
+            // skryjeme vyskakovacie menu profilu
             ProfilePopup.Visibility = Visibility.Collapsed;
 
-            // Otvoríme naše nové okno sledovania zásielky
+            // otvoríme naše nové okno sledovania zásielky
             SledovanieWindow sledovanieOkna = new SledovanieWindow();
             sledovanieOkna.ShowDialog(); // ShowDialog spôsobí, že sa otvorí ako nadradené okno
         }
@@ -390,10 +390,10 @@ namespace RND_clothing_e_shop
        
         private void History_Click(object sender, RoutedEventArgs e)
         {
-            // Skryjeme vyskakovacie menu profilu
+            // skryjeme vyskakovacie menu profilu
             ProfilePopup.Visibility = Visibility.Collapsed;
 
-            // Otvoríme naše nové okno histórie nákupov
+            // otvoríme naše nové okno histórie nákupov
             HistoriaWindow historiaOkna = new HistoriaWindow();
             historiaOkna.ShowDialog();
         }

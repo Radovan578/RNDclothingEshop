@@ -19,7 +19,7 @@ namespace RND_clothing_e_shop
 
         private void NacitajDataZasielok()
         {
-            // Ak súbor ešte neexistuje (nikto nič nekúpil), vykočíme z metódy
+            // ak súbor ešte neexistuje (nikto nič nekúpil), vykočíme z metódy
             if (!File.Exists(suborObjednavok))
             {
                 return;
@@ -27,17 +27,17 @@ namespace RND_clothing_e_shop
 
             try
             {
-                // 1. Prečítame celý text zo súboru
+                // 1. prečítame celý text zo súboru
                 string jsonText = File.ReadAllText(suborObjednavok);
 
-                // 2. Prevedieme text na zoznam objektov Objednavka
+                // 2. prevedieme text na zoznam objektov Objednavka
                 List<Objednavka> vsetkyObjednavky = JsonSerializer.Deserialize<List<Objednavka>>(jsonText);
 
                 if (vsetkyObjednavky != null)
                 {
                     List<Objednavka> prefiltrovaneObjednavky = new List<Objednavka>();
 
-                    // 3. Prejdeme cyklom objednávky a vyberieme len tie, ktoré spravil prihlásený človek
+                    // 3. prejdeme cyklom objednávky a vyberieme len tie, ktoré spravil prihlásený človek
                     foreach (var obj in vsetkyObjednavky)
                     {
                         if (obj.Uzivatel == MainWindow.PrihlasenyUzivatel)
@@ -46,16 +46,16 @@ namespace RND_clothing_e_shop
                         }
                     }
 
-                    // Zoznam otočíme, aby bola najnovšia objednávka hore
+                    // zoznam otočíme, aby bola najnovšia objednávka hore
                     prefiltrovaneObjednavky.Reverse();
 
-                    // 4. Pošleme dáta do XAML grafického zoznamu
+                    // 4. pošleme dáta do XAML grafického zoznamu
                     HistoriaList.ItemsSource = prefiltrovaneObjednavky;
                 }
             }
             catch
             {
-                // Ak by bola v súbore nejaká chyba, program nespadne
+                // ak by bola v súbore nejaká chyba, program nespadne
                 MessageBox.Show("Nepodarilo sa načítať históriu nákupov.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }

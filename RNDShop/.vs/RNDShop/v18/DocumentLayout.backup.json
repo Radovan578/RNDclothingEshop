@@ -1,53 +1,53 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\",
+  "WorkspaceRootPath": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\skuska\\rndshop\\rndshop\\shippingwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|solutionrelative:rndshop\\shippingwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\skuska\\rndshop\\rndshop\\sledovaniewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|solutionrelative:rndshop\\sledovaniewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\skuska\\rndshop\\rndshop\\shoppage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|solutionrelative:rndshop\\shoppage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\skuska\\rndshop\\rndshop\\objednavka.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\rndclothingeshop\\skuska pred prezentovanim\\rndshop\\rndshop\\objednavka.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|solutionrelative:rndshop\\objednavka.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\skuska\\rndshop\\rndshop\\produkt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\rndclothingeshop\\skuska pred prezentovanim\\rndshop\\rndshop\\sledovaniewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|solutionrelative:rndshop\\sledovaniewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\rndclothingeshop\\skuska pred prezentovanim\\rndshop\\rndshop\\shoppage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|solutionrelative:rndshop\\shoppage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\rndclothingeshop\\skuska pred prezentovanim\\rndshop\\rndshop\\shippingwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|solutionrelative:rndshop\\shippingwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\rndclothingeshop\\skuska pred prezentovanim\\rndshop\\rndshop\\produkt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|solutionrelative:rndshop\\produkt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\skuska\\rndshop\\rndshop\\sledovaniewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\rndclothingeshop\\skuska pred prezentovanim\\rndshop\\rndshop\\sledovaniewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|solutionrelative:rndshop\\sledovaniewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\skuska\\rndshop\\rndshop\\historiawindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\rndclothingeshop\\skuska pred prezentovanim\\rndshop\\rndshop\\historiawindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|solutionrelative:rndshop\\historiawindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\skuska\\rndshop\\rndshop\\historiawindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\rndclothingeshop\\skuska pred prezentovanim\\rndshop\\rndshop\\historiawindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|solutionrelative:rndshop\\historiawindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\skuska\\rndshop\\rndshop\\shoppage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\rndclothingeshop\\skuska pred prezentovanim\\rndshop\\rndshop\\shoppage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|solutionrelative:rndshop\\shoppage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\skuska\\rndshop\\rndshop\\prihlasenie.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\rndclothingeshop\\skuska pred prezentovanim\\rndshop\\rndshop\\prihlasenie.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|solutionrelative:rndshop\\prihlasenie.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\skuska\\rndshop\\rndshop\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\rndclothingeshop\\skuska pred prezentovanim\\rndshop\\rndshop\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|solutionrelative:rndshop\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\skuska\\rndshop\\rndshop\\shippingwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|c:\\users\\danie\\source\\repos\\rndclothingeshop\\skuska pred prezentovanim\\rndshop\\rndshop\\shippingwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{179E8D9D-F0FD-4013-965B-2C4E2BE90F2F}|RNDShop\\RNDShop.csproj|solutionrelative:rndshop\\shippingwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -58,15 +58,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Objednavka.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\Objednavka.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\Objednavka.cs",
               "RelativeDocumentMoniker": "RNDShop\\Objednavka.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\Objednavka.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\Objednavka.cs",
               "RelativeToolTip": "RNDShop\\Objednavka.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -77,14 +81,129 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "SledovanieWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\SledovanieWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\SledovanieWindow.xaml.cs",
               "RelativeDocumentMoniker": "RNDShop\\SledovanieWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\SledovanieWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\SledovanieWindow.xaml.cs",
               "RelativeToolTip": "RNDShop\\SledovanieWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwDcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-20T20:33:25.072Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-20T20:33:25.072Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ShopPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\ShopPage.xaml.cs",
+              "RelativeDocumentMoniker": "RNDShop\\ShopPage.xaml.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\ShopPage.xaml.cs",
+              "RelativeToolTip": "RNDShop\\ShopPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T20:15:58.836Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ShippingWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\ShippingWindow.xaml.cs",
+              "RelativeDocumentMoniker": "RNDShop\\ShippingWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\ShippingWindow.xaml.cs",
+              "RelativeToolTip": "RNDShop\\ShippingWindow.xaml.cs",
+              "ViewState": "AgIAAM0AAAAAAAAAAADwv14BAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-17T18:11:53.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Produkt.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\Produkt.cs",
+              "RelativeDocumentMoniker": "RNDShop\\Produkt.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\Produkt.cs",
+              "RelativeToolTip": "RNDShop\\Produkt.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T20:31:08.53Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SledovanieWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\SledovanieWindow.xaml",
+              "RelativeDocumentMoniker": "RNDShop\\SledovanieWindow.xaml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\SledovanieWindow.xaml",
+              "RelativeToolTip": "RNDShop\\SledovanieWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-20T20:29:47.368Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HistoriaWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\HistoriaWindow.xaml",
+              "RelativeDocumentMoniker": "RNDShop\\HistoriaWindow.xaml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\HistoriaWindow.xaml",
+              "RelativeToolTip": "RNDShop\\HistoriaWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-20T20:29:19.102Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HistoriaWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\HistoriaWindow.xaml.cs",
+              "RelativeDocumentMoniker": "RNDShop\\HistoriaWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\HistoriaWindow.xaml.cs",
+              "RelativeToolTip": "RNDShop\\HistoriaWindow.xaml.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAwwD4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T20:32:09.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Prihlasenie.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\Prihlasenie.xaml.cs",
+              "RelativeDocumentMoniker": "RNDShop\\Prihlasenie.xaml.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\Prihlasenie.xaml.cs",
+              "RelativeToolTip": "RNDShop\\Prihlasenie.xaml.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAADwv2QAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T20:24:23.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "RNDShop\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\MainWindow.xaml.cs",
+              "RelativeToolTip": "RNDShop\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAIwFUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T20:21:15.439Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ShopPage.xaml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\ShopPage.xaml",
+              "RelativeDocumentMoniker": "RNDShop\\ShopPage.xaml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\ShopPage.xaml",
+              "RelativeToolTip": "RNDShop\\ShopPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-20T20:15:31.26Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ShippingWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\ShippingWindow.xaml",
+              "RelativeDocumentMoniker": "RNDShop\\ShippingWindow.xaml",
+              "ToolTip": "C:\\Users\\danie\\source\\repos\\RNDclothingEshop\\skuska pred prezentovanim\\RNDShop\\RNDShop\\ShippingWindow.xaml",
+              "RelativeToolTip": "RNDShop\\ShippingWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-20T20:08:47.054Z"
             },
             {
               "$type": "Bookmark",
@@ -93,136 +212,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ShopPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\ShopPage.xaml.cs",
-              "RelativeDocumentMoniker": "RNDShop\\ShopPage.xaml.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\ShopPage.xaml.cs",
-              "RelativeToolTip": "RNDShop\\ShopPage.xaml.cs",
-              "ViewState": "AgIAAIMBAAAAAAAAAAAAAJkBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-20T20:15:58.836Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ShippingWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\ShippingWindow.xaml.cs",
-              "RelativeDocumentMoniker": "RNDShop\\ShippingWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\ShippingWindow.xaml.cs*",
-              "RelativeToolTip": "RNDShop\\ShippingWindow.xaml.cs*",
-              "ViewState": "AgIAAFQBAAAAAAAAAADwv28BAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-17T18:11:53.254Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Produkt.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\Produkt.cs",
-              "RelativeDocumentMoniker": "RNDShop\\Produkt.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\Produkt.cs",
-              "RelativeToolTip": "RNDShop\\Produkt.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-20T20:31:08.53Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SledovanieWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\SledovanieWindow.xaml",
-              "RelativeDocumentMoniker": "RNDShop\\SledovanieWindow.xaml",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\SledovanieWindow.xaml",
-              "RelativeToolTip": "RNDShop\\SledovanieWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-20T20:29:47.368Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "HistoriaWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\HistoriaWindow.xaml",
-              "RelativeDocumentMoniker": "RNDShop\\HistoriaWindow.xaml",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\HistoriaWindow.xaml",
-              "RelativeToolTip": "RNDShop\\HistoriaWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-20T20:29:19.102Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "HistoriaWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\HistoriaWindow.xaml.cs",
-              "RelativeDocumentMoniker": "RNDShop\\HistoriaWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\HistoriaWindow.xaml.cs",
-              "RelativeToolTip": "RNDShop\\HistoriaWindow.xaml.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAwwD4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-20T20:32:09.076Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Prihlasenie.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\Prihlasenie.xaml.cs",
-              "RelativeDocumentMoniker": "RNDShop\\Prihlasenie.xaml.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\Prihlasenie.xaml.cs",
-              "RelativeToolTip": "RNDShop\\Prihlasenie.xaml.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAADwv2QAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-20T20:24:23.09Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "RNDShop\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\MainWindow.xaml.cs",
-              "RelativeToolTip": "RNDShop\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAIwFUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-20T20:21:15.439Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ShopPage.xaml",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\ShopPage.xaml",
-              "RelativeDocumentMoniker": "RNDShop\\ShopPage.xaml",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\ShopPage.xaml",
-              "RelativeToolTip": "RNDShop\\ShopPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-20T20:15:31.26Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ShippingWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\ShippingWindow.xaml",
-              "RelativeDocumentMoniker": "RNDShop\\ShippingWindow.xaml",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\skuska\\RNDShop\\RNDShop\\ShippingWindow.xaml",
-              "RelativeToolTip": "RNDShop\\ShippingWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-20T20:08:47.054Z",
-              "EditorCaption": ""
             }
           ]
         }

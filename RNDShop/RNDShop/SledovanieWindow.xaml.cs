@@ -32,25 +32,25 @@ namespace RND_clothing_e_shop
                 {
                     Objednavka najnovsiaObjednavka = null;
 
-                    // Hľadáme úplne poslednú zapísanú objednávku tohto užívateľa
+                    // hladame poslednu objednavku pre prihlaseneho uzivatela
                     foreach (var obj in vsetkyObjednavky)
                     {
                         if (obj.Uzivatel == MainWindow.PrihlasenyUzivatel)
                         {
-                            najnovsiaObjednavka = obj; // Každá ďalšia nájdená prepíše staršiu, čiže na konci budeme mať najnovšiu
+                            najnovsiaObjednavka = obj; // kazda dalsia objednavka pre prihlaseneho uzivatela bude aktualizovat najnovsiu objednavku, cize nakoniec zostane len ta posledna
                         }
-                    }
 
-                    // Ak sme našli aspoň jednu objednávku
-                    if (najnovsiaObjednavka != null)
-                    {
-                        // Skryjeme text o žiadnej zásielke a ukážeme panel s detailmi
+                        // ak najdeme aspon jednu objednavku pre prihlaseneho uzivatela, tak ju zobrazime
+                        if (najnovsiaObjednavka != null)
+                        {
+                        // skryjeme text o ziadnej zasielke a ukazeme panel s detailmi
                         ZiadnaZasielkaTxt.Visibility = Visibility.Collapsed;
                         DetailZasielkyPanel.Visibility = Visibility.Visible;
 
-                        // Dosadíme texty do XAML okna
+                        // dosadime texty do XAML okna
                         CisloObjednavkyTxt.Text = $"Objednávka {najnovsiaObjednavka.IdObjednavky}";
                         StavZasielkyTxt.Text = najnovsiaObjednavka.StavZasielky;
+                        }
                     }
                 }
             }

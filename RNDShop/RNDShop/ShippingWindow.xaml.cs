@@ -34,7 +34,7 @@ namespace RND_clothing_e_shop
             CalculatePrice();   
         }
 
-        // Nastavenie počiatočného stavu pre info text o kupóne
+        // nastavenie počiatočného stavu pre info text o kupóne
         private void InitializeCouponStatus()
         {
             if (CouponStatusText != null)
@@ -67,7 +67,7 @@ namespace RND_clothing_e_shop
 
             string vybranyStat = CountryComboBox.SelectedItem.ToString();
 
-            // Slovensko = bez príplatku
+            // slovensko = bez príplatku
             if (vybranyStat == "Slovakia" || vybranyStat == "Slovensko")
             {
                 prplatokZaStat = 0.00m;
@@ -86,7 +86,7 @@ namespace RND_clothing_e_shop
             CalculatePrice();    // prepočíta celkovú cenu
         }
 
-        //Logika tlačidla pre uplatnenie zľavového kódu
+        // logika tlačidla pre uplatnenie zľavového kódu
         private void ApplyDiscountButton_Click(object sender, RoutedEventArgs e)
         {
             if (DiscountBox == null || CouponStatusText == null) return;
@@ -96,7 +96,7 @@ namespace RND_clothing_e_shop
             // správny kód
             if (zadanyKod == "VITAJ10")
             {
-                percentualnaZlava = 0.10m; // Nastavíme 10% zľavu
+                percentualnaZlava = 0.10m; // nastavíme 10% zľavu
                 CouponStatusText.Text = "Kupón je platný";
                 CouponStatusText.Foreground = Brushes.Green;
                 MessageBox.Show("Zľavový kód VITAJ10 bol úspešne uplatnený! Získavaš 10% zľavu na produkty.", "Zľava uplatnená 🎉", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -112,14 +112,14 @@ namespace RND_clothing_e_shop
             // zlý kód
             else
             {
-                // Ak zadal hlúposť, zľava sa vynuluje a vypíše sa chyba
+                // ak zadal hlúposť, zľava sa vynuluje a vypíše sa chyba
                 percentualnaZlava = 0.00m;
                 CouponStatusText.Text = "Zadaný kupón je neplatný";
                 CouponStatusText.Foreground = Brushes.Red;
                 MessageBox.Show("Tento zľavový kód nie je platný alebo vypršala jeho platnosť.", "Neplatný kód ❌", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            // Po kliknutí hneď prepočíta celkovú sumu na obrazovke
+            // po kliknutí hneď prepočíta celkovú sumu na obrazovke
             CalculatePrice();
         }
 
@@ -139,11 +139,11 @@ namespace RND_clothing_e_shop
                 }
             }
 
-            // Odpočítanie zľavy z ceny produktov pred pripočítaním dopravy
+            // odpočítanie zľavy z ceny produktov pred pripočítaním dopravy
             decimal zlavaVSumach = cenaProduktov * percentualnaZlava;
             decimal cenaProduktovPoZlave = cenaProduktov - zlavaVSumach;
 
-            // Zobrazenie alebo skrytie riadku so zľavou na základe toho, či je zľava aktívna
+            // zobrazenie alebo skrytie riadku so zľavou na základe toho, či je zľava aktívna
             if (zlavaVSumach > 0)
             {
                 DiscountPriceText.Text = $"- {zlavaVSumach:N2} €";
