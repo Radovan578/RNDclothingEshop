@@ -160,7 +160,7 @@ namespace RND_clothing_e_shop
                 CornerRadius = new CornerRadius(10),
                 Margin = new Thickness(0, 0, 0, 10),
                 Cursor = Cursors.Hand,
-                Tag = prod // Uložíme objekt do Tagu pre neskorší klik
+                Tag = prod // uložíme objekt do Tagu pre neskorší klik
             };
             imageContainer.MouseLeftButtonDown += ImageContainer_MouseLeftButtonDown;    // klik na obrázok otvorí detail
 

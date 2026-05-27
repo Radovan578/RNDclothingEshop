@@ -174,7 +174,7 @@
 
                             <Grid Margin="0,0,0,14">
                                 <TextBlock Text="Stav kupónu" Foreground="#DDDDDD" FontSize="16"/>
-                                <TextBlock x:Name="CouponStatusText" HorizontalAlignment="Right" Text="Zatiaľ ste nezadali žiaden kupón" Foreground="Gray" FontSize="16" FontWeight="SemiBold"/>
+                                <TextBlock x:Name="CouponStatusText" Text=" Zatiaľ ste nezadali žiaden kupón" Foreground="Gray" FontSize="16" FontWeight="SemiBold" Margin="92,0,-21,0"/>
                             </Grid>
 
                             <Separator Background="#555555" Margin="0,10,0,20"/>
