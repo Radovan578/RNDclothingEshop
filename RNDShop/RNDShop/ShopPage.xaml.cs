@@ -20,7 +20,16 @@ namespace RND_clothing_e_shop
             SearchBox.Foreground = Brushes.Gray;
 
             // nacita meno pouzivatela ktory sa prihlasil cez mainwindow a zobrazi ho v pravom hornom rohu, ak sa nikto neprihlasil, zobrazi "Host"
-            ProfileNameText.Text = string.IsNullOrEmpty(MainWindow.PrihlasenyUzivatel) ? "Hosť" : MainWindow.PrihlasenyUzivatel;
+            if (string.IsNullOrEmpty(MainWindow.PrihlasenyUzivatel))
+            {
+
+                ProfileNameText.Text = "Hosť";
+            }
+            else
+            {
+
+                ProfileNameText.Text = MainWindow.PrihlasenyUzivatel;
+            }
 
             NacitajData();
             ZobrazProdukty("Všetko");
@@ -367,7 +376,14 @@ namespace RND_clothing_e_shop
 
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
         {
-            ProfilePopup.Visibility = ProfilePopup.Visibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed;
+            if (ProfilePopup.Visibility == Visibility.Collapsed)
+            {
+                ProfilePopup.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                ProfilePopup.Visibility = Visibility.Collapsed;
+            }
         }
 
         // zatvorenie profilového menu
