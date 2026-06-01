@@ -104,7 +104,7 @@ namespace RND_clothing_e_shop
             };
         }
 
-        // vytvori zoznam produktov
+        // zobrazi to vsetky produkty
         private void ZobrazProdukty(string kategoria)
         {
             ProductsPanel.Children.Clear();  // vymaze stare produkty z UI
@@ -136,6 +136,7 @@ namespace RND_clothing_e_shop
             }
         }
 
+        // AI - vytvor UI ktore budu v xaml v C#.
         // vytvorí vizuálnu kartu produktu
         private void VytvorKartickuProduktu(Produkt prod)
         {

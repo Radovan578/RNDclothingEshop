@@ -94,7 +94,7 @@ namespace RND_clothing_e_shop
             string json = File.ReadAllText(kosikSubor);
 
             // Premení JSON text na zoznam košíkov
-            List<Kosik>? kosik = JsonSerializer.Deserialize<List<Kosik>>(json);
+            var kosik = JsonSerializer.Deserialize<List<Kosik>>(json);
 
             // Skontroluje či deserialize nevrátil null
             if (kosik == null)

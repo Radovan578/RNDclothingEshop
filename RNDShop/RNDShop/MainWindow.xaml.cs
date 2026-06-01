@@ -17,7 +17,6 @@ namespace RND_clothing_e_shop
     /// </summary>
     public partial class MainWindow : Window
     {
-        // OPRAVA CHYBY CS0117: Pridaná statická premenná, ktorú hľadá ShopPage
         // Predvolene je nastavená na "Hosť", ak by niekto klikol na "Pokračovať ako Hosť"
         public static string PrihlasenyUzivatel = "Hosť";
 

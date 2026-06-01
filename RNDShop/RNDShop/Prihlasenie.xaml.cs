@@ -68,7 +68,7 @@ namespace RND_clothing_e_shop
             // ak login prešiel
             if (uspech)
             {
-                // KĽÚČOVÁ OPRAVA: Uložíme meno úspešne prihláseného užívateľa do globálnej premennej
+                // Uložíme meno úspešne prihláseného užívateľa do globálnej premennej
                 MainWindow.PrihlasenyUzivatel = nameOrEmail;
 
                 // otvorí shop stránku
