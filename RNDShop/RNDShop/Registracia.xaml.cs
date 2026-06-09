@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace RND_clothing_e_shop
 {
-    /// <summary>
-    /// Interaction logic for Registracia.xaml
-    /// </summary>
     public partial class Registracia : Window
     {
         public Registracia()

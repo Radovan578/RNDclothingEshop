@@ -12,9 +12,6 @@ using System.Windows.Shapes;
 
 namespace RND_clothing_e_shop
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         // Predvolene je nastavená na "Hosť", ak by niekto klikol na "Pokračovať ako Hosť"

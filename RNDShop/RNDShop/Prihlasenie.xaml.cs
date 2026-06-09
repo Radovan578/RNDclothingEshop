@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace RND_clothing_e_shop
 {
-    /// <summary>
-    /// Interaction logic for Prihlasenie.xaml
-    /// </summary>
     public partial class Prihlasenie : Window
     {
         public Prihlasenie()

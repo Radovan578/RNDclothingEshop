@@ -36,6 +36,7 @@ namespace RND_clothing_e_shop
                 // zobrazí počet produktov v UI
                 ProduktCountText.Text = pocetProdukt.ToString();
 
+                // AI - vytvor UI ktore budu v xaml v C# v takom istom style ako je v xaml.
                 //Vytvorenie karty produktu
                 Border card = new Border
                 {

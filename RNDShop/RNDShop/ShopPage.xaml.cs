@@ -136,7 +136,7 @@ namespace RND_clothing_e_shop
             }
         }
 
-        // AI - vytvor UI ktore budu v xaml v C#.
+        // AI - vytvor UI ktore budu v xaml v C# v takom istom style ako je aj v xaml.
         // vytvorí vizuálnu kartu produktu
         private void VytvorKartickuProduktu(Produkt prod)
         {
@@ -355,25 +355,6 @@ namespace RND_clothing_e_shop
             ZobrazProdukty("Doplnky");
         }
 
-        private void AddWhiteShirt_Click(object sender, RoutedEventArgs e)
-        {
-            AddToCart("Biele Tričko", 19.99m, "C:\\Users\\cipkod25\\source\\repos\\csharp\\obchod eshop\\RND clothing e-shop\\Images\\biele tricko predok.jpg");
-        }
-
-        private void AddBlackHoodie_Click(object sender, RoutedEventArgs e)
-        {
-            AddToCart("Čierna Mikina", 39.99m, "C:\\Users\\cipkod25\\source\\repos\\csharp\\obchod eshop\\RND clothing e-shop\\Images\\sweater front.jpg");
-        }
-
-        private void AddJeans_Click(object sender, RoutedEventArgs e)
-        {
-            AddToCart("Rifle", 49.99m, "C:\\Users\\cipkod25\\source\\repos\\csharp\\obchod eshop\\RND clothing e-shop\\Images\\rifle pred.jpg");
-        }
-
-        private void AddJacket_Click(object sender, RoutedEventArgs e)
-        {
-            AddToCart("Bunda", 89.99m, "C:\\Users\\cipkod25\\source\\repos\\csharp\\obchod eshop\\RND clothing e-shop\\Images\\bunda predok.jpg");
-        }
 
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
         {
