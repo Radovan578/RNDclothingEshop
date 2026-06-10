@@ -19,7 +19,7 @@ namespace RND_clothing_e_shop
 
         private void NacitajDataZasielok()
         {
-            // ak súbor ešte neexistuje (nikto nič nekúpil), vykočíme z metódy
+            // ak súbor ešte neexistuje (nikto nič nekúpil) vyskočíme z metódy
             if (!File.Exists(suborObjednavok))
             {
                 return;
@@ -27,7 +27,7 @@ namespace RND_clothing_e_shop
 
             try
             {
-                // 1. prečítame celý text zo súboru
+                // 1. prečíta celý text zo súboru
                 string jsonText = File.ReadAllText(suborObjednavok);
 
                 // 2. prevedieme text na zoznam objektov Objednavka
@@ -37,7 +37,7 @@ namespace RND_clothing_e_shop
                 {
                     List<Objednavka> prefiltrovaneObjednavky = new List<Objednavka>();
 
-                    // 3. prejdeme cyklom objednávky a vyberieme len tie, ktoré spravil prihlásený človek
+                    // 3. prejde cyklom objednávky a vyberieme len tie, ktoré spravil prihlásený človek
                     foreach (var obj in vsetkyObjednavky)
                     {
                         if (obj.Uzivatel == MainWindow.PrihlasenyUzivatel)
@@ -49,7 +49,7 @@ namespace RND_clothing_e_shop
                     // zoznam otočíme, aby bola najnovšia objednávka hore
                     prefiltrovaneObjednavky.Reverse();
 
-                    // 4. pošleme dáta do XAML grafického zoznamu
+                    // 4. pošle dáta do XAML grafického zoznamu
                     HistoriaList.ItemsSource = prefiltrovaneObjednavky;
                 }
             }

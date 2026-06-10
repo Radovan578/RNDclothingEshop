@@ -23,13 +23,12 @@ namespace RND_clothing_e_shop
                 return;
             }
 
-            //simulacia platby
+            //simulacia uspesnej platby
             MessageBox.Show("Platba prebehla úspešne!", "Hotovo", MessageBoxButton.OK, MessageBoxImage.Information);    // ukáže že platba prebehla úspešne
 
             // nastaví že platba bola úspešná
             PlatbaUspesna = true;
             // povie oknu že všetko OK
-            this.DialogResult = true;
             // zavrie okno platby
             this.Close();
         }
@@ -37,7 +36,6 @@ namespace RND_clothing_e_shop
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             // povie že platba sa neuskutočnila
-            this.DialogResult = false;
             // zavrie okno
             this.Close();
         }

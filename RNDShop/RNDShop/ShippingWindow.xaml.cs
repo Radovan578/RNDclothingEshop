@@ -78,7 +78,7 @@ namespace RND_clothing_e_shop
                 prplatokZaStat = 3.00m;
             }
             // vzdialené krajiny = vyšší príplatok
-            else
+            else if (vybranyStat == "Velka Britania")
             {
                 prplatokZaStat = 10.00m;
             }

@@ -250,20 +250,30 @@ namespace RND_clothing_e_shop
             }
         }
 
+        // Spustí sa keď používateľ klikne do TextBoxu
         private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
         {
+            // Ak je aktuálny text placeholder
             if (SearchBox.Text == "Hľadať...")
             {
+                // Vymaže placeholder
                 SearchBox.Text = "";
+
+                // Nastaví farbu textu na bielu pre zadávanie používateľom
                 SearchBox.Foreground = Brushes.White;
             }
         }
 
+        // Spustí sa keď TextBox stratí fokus
         private void SearchBox_LostFocus(object sender, RoutedEventArgs e)
         {
+            // Ak používateľ nič nezadal alebo je text prázdny
             if (string.IsNullOrWhiteSpace(SearchBox.Text))
             {
+                // Zobrazí placeholder
                 SearchBox.Text = "Hľadať...";
+
+                // Nastaví sivú farbu placeholderu
                 SearchBox.Foreground = Brushes.Gray;
             }
         }
