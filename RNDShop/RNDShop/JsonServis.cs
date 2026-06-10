@@ -43,7 +43,7 @@ namespace RND_clothing_e_shop
             string json = File.ReadAllText(usersSubor);
 
             // Premení JSON text na zoznam používateľov
-            List<Uzivatel>? users = JsonSerializer.Deserialize<List<Uzivatel>>(json);
+            var users = JsonSerializer.Deserialize<List<Uzivatel>>(json);
 
             // Skontroluje či výsledok nie je null
             if (users == null)

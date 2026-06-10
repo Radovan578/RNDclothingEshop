@@ -392,7 +392,7 @@ namespace RND_clothing_e_shop
 
             // otvoríme naše nové okno sledovania zásielky
             SledovanieWindow sledovanieOkna = new SledovanieWindow();
-            sledovanieOkna.ShowDialog(); // ShowDialog spôsobí, že sa otvorí ako nadradené okno
+            sledovanieOkna.ShowDialog(); // ShowDialog spôsobí že sa otvorí ako nadradené okno
         }
 
        
@@ -403,7 +403,7 @@ namespace RND_clothing_e_shop
 
             // otvoríme naše nové okno histórie nákupov
             HistoriaWindow historiaOkna = new HistoriaWindow();
-            historiaOkna.ShowDialog();
+            historiaOkna.ShowDialog();  // ShowDialog spôsobí že sa otvorí ako nadradené okno
         }
     }
 }
